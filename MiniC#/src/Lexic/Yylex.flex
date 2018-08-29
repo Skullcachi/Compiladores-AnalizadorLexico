@@ -47,7 +47,7 @@ L = [a-zA-Z_]
 {D}+	                                                         { return "INTEGER: " + yytext() + " in line: " + yyline + " columns: " + yycolumn + " - " + (yycolumn + yylength()); }
 
 // HEXADECIMALs
-"0x"[0-9A-F]+ | "0x"[0-9a-f]+ | "0X"[0-9A-F]+ | "0X"[0-9A-F]+    { return "INTEGER HEXADECIMAL: " + yytext() + " in line: " + yyline + " columns: " + yycolumn + " - " + (yycolumn + yylength()); }
+"0x"[0-9A-F]+ | "0x"[0-9a-f]+ | "0X"[0-9A-F]+ | "0X"[0-9a-f]+    { return "INTEGER HEXADECIMAL: " + yytext() + " in line: " + yyline + " columns: " + yycolumn + " - " + (yycolumn + yylength()); }
 
 // DOUBLEs
 [-+]?{D}+"."({D}+ | ("E" | "e")"+"{D}+ | {D}+("E" | "e")"+"{D}+) { return "DOUBLE: " + yytext() + " in line: " + yyline + " columns: " + yycolumn + " - " + (yycolumn + yylength());}
