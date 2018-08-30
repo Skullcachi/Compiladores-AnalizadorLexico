@@ -90,7 +90,7 @@ public class MiniCUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public String PATH = "O:/Landivar/Landivar 2018/Segundo Semestre 2018/Compiladores/Proyecto 1/MiniC#";
+    public String PATH = "O:/Landivar/Landivar 2018/Segundo Semestre 2018/Compiladores/Proyecto 1/MiniC#/";
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         BufferedReader reader;
@@ -100,6 +100,7 @@ public class MiniCUI extends javax.swing.JFrame {
         FileFilter filter = new FileNameExtensionFilter("C# Files", "txt");
         jFileChooser1.setFileFilter(filter);
         try {
+            jFileChooser1.setCurrentDirectory(new File(PATH + "archivo_entrada.txt"));
             int returnVal = jFileChooser1.showOpenDialog(jFileChooser1);
             if (returnVal == jFileChooser1.APPROVE_OPTION)
             {
@@ -115,17 +116,26 @@ public class MiniCUI extends javax.swing.JFrame {
                         writerErrores.write(listaErrores.get(i));
                     }
                     writerErrores.close();
+                    
+                    
                 }
                 else
                 {
-                    writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(PATH + file.getName().replaceAll(".txt", "salida.txt")), "utf-8"));
+                    writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(PATH + file.getName().replaceAll("entrada.txt", "salida.out")), "utf-8"));
                     reader = new BufferedReader(new FileReader(file.getAbsolutePath()));
-                    while ((currentLine = reader.readLine()) != null)
+                    /*while ((currentLine = reader.readLine()) != null)
                     {                        
                         writer.write(currentLine);
-                    }
+                    }*/
+                    writer.write(resultados);
                     writer.close();
                     reader.close();
+                    
+                    writerErrores = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(PATH + "errores_encontrados.txt"), "utf-8"));
+                    for (int i = 0; i < listaErrores.size(); i++) {
+                        writerErrores.write(listaErrores.get(i));
+                    }
+                    writerErrores.close();
                 }
             }
             else
@@ -180,30 +190,31 @@ public class MiniCUI extends javax.swing.JFrame {
     public ArrayList<String> listaErrores = new ArrayList<String>();
     
     
+    String resultados = "";
     public void ProbarLexerFile(File filetoread) throws IOException{
         Reader reader;
         reader = new BufferedReader(new FileReader(filetoread.getAbsolutePath()));
         Lexic.Yylex lexer = new Lexic.Yylex(reader);
-        String resultados = "";
         
         while (true){
             String token = lexer.yylex();
             if (token == null){
                 resultados = resultados + "EOF";
                 jTextArea1.setText(resultados);
+                hayError = false;
                 return;
             }
             else
             {
                 if (token.contains("Lexical error:"))
                 {                    
-                    resultados =  token + "\n ";
+                    resultados = resultados + "\n*** ERROR: line: " + lexer.line + ". \n*** Unrecognized char: '" + lexer.lexeme + "'.\n\n";
                     hayError = true;
-                    listaErrores.add(resultados);
+                    listaErrores.add("\n*** ERROR: line: " + lexer.line + ". \n*** Unrecognized char: '" + lexer.lexeme + "'.\n\n");
                 }
                 else 
                 {                    
-                    resultados =  resultados + " TOKEN: " + token + "\n";
+                    resultados +=  "\n" + token + ".\n";
                 }
             }
         }
