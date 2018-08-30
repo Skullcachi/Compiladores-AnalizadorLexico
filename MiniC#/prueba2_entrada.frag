@@ -13,4 +13,14 @@ comment
 /*******/
 
 /*    /* an almost-nested comment */
-"all done!"
+"all deeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeone!"
+
+/*dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd*/
+2.0E+5
+2.0E-5
+2.0E5
+2.E+2
+2.E-2
+2.E2
+
+0X151fff 
