@@ -15,7 +15,7 @@ import java.io.IOException;
 public class Lexico {
     
     
-    static String PATH = "O:/NetBeansProjects/MiniC#/src/Lexic/Yylex.flex";
+    static String PATH = "C:/Users/cachi/Documents/Landivar/Compiladores/Compiladores-AnalizadorLexico/MiniC#/src/Lexic/Yylex.flex";
         
     /**
      * @param args the command line arguments

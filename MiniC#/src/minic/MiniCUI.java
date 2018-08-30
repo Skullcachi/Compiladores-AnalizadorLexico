@@ -90,7 +90,8 @@ public class MiniCUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public String PATH = "O:/Landivar/Landivar 2018/Segundo Semestre 2018/Compiladores/Proyecto 1/MiniC#/";
+    public String PATH = "C:/Users/cachi/Documents/Landivar/Compiladores/Compiladores-AnalizadorLexico/MiniC#/";
+    String resultados = "";
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         BufferedReader reader;
@@ -98,6 +99,7 @@ public class MiniCUI extends javax.swing.JFrame {
         BufferedWriter writer;
         BufferedWriter writerErrores;
         FileFilter filter = new FileNameExtensionFilter("C# Files", "txt");
+        resultados = "";
         jFileChooser1.setFileFilter(filter);
         try {
             jFileChooser1.setCurrentDirectory(new File(PATH + "archivo_entrada.txt"));
@@ -121,7 +123,7 @@ public class MiniCUI extends javax.swing.JFrame {
                 }
                 else
                 {
-                    writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(PATH + file.getName().replaceAll("entrada.txt", "salida.out")), "utf-8"));
+                    writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(PATH + file.getName().replaceAll("entrada.frag", "salida.out")), "utf-8"));
                     reader = new BufferedReader(new FileReader(file.getAbsolutePath()));
                     /*while ((currentLine = reader.readLine()) != null)
                     {                        
@@ -190,7 +192,6 @@ public class MiniCUI extends javax.swing.JFrame {
     public ArrayList<String> listaErrores = new ArrayList<String>();
     
     
-    String resultados = "";
     public void ProbarLexerFile(File filetoread) throws IOException{
         Reader reader;
         reader = new BufferedReader(new FileReader(filetoread.getAbsolutePath()));
