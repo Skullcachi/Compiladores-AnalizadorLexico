@@ -1,0 +1,55 @@
+
+*** ERROR: line: 1. 
+*** Unrecognized char: '"'.
+
+
+IDENTIFIER: anita in line: 1 columns: 2 - 6.
+
+IDENTIFIER: lava in line: 1 columns: 8 - 11.
+
+IDENTIFIER: la in line: 2 columns: 1 - 2.
+
+IDENTIFIER: tina in line: 2 columns: 4 - 7.
+
+*** ERROR: line: 2. 
+*** Unrecognized char: '"'.
+
+
+INTEGER HEXADECIMAL: 0x088A08 in line: 1 columns: 10 - 17.
+
+IDENTIFIER: casa13 in line: 3 columns: 1 - 6.
+
+OPERATOR OR PUNTATION MARK: = in line: 3 columns: 8 - 8.
+
+INTEGER: 258 in line: 3 columns: 10 - 12.
+
+IDENTIFIER: pokemon in line: 4 columns: 1 - 7.
+
+DOUBLE: 2.5 in line: 4 columns: 9 - 11.
+
+RESERVED WORD: class in line: 5 columns: 1 - 5.
+
+RESERVED WORD: void in line: 5 columns: 7 - 10.
+
+OPERATOR OR PUNTATION MARK: . in line: 9 columns: 1 - 1.
+
+INTEGER: 13 in line: 9 columns: 2 - 3.
+
+IDENTIFIER: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa in line: 10 columns: 1 - 81 exceeded the max limit length. Identifier truncated..
+
+*** ERROR: line: 11. 
+*** Unrecognized char: '"'.
+
+
+IDENTIFIER: hola in line: 11 columns: 2 - 5.
+
+DOUBLE: 2.E25 in line: 13 columns: 1 - 5.
+
+DOUBLE: 2.5e-5 in line: 14 columns: 1 - 6.
+
+DOUBLE: 0.2E-2 in line: 15 columns: 1 - 6.
+
+DOUBLE: 5.e3 in line: 16 columns: 1 - 4.
+
+Unfinished comment /* lol found in line: 17 columns: 1 - 6.
+EOF

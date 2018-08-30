@@ -68,12 +68,12 @@ public class MiniCUI extends javax.swing.JFrame {
                 .addGap(2, 2, 2)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1)
+                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 971, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,8 +83,8 @@ public class MiniCUI extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
                 .addGap(26, 26, 26)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -123,7 +123,8 @@ public class MiniCUI extends javax.swing.JFrame {
                 }
                 else
                 {
-                    writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(PATH + file.getName().replaceAll("entrada.frag", "salida.out")), "utf-8"));
+                    String extensionArchivoSalida = file.getName().substring(file.getName().lastIndexOf('.'), file.getName().length());
+                    writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(PATH + file.getName().replaceAll("entrada" + extensionArchivoSalida, "salida.out")), "utf-8"));
                     reader = new BufferedReader(new FileReader(file.getAbsolutePath()));
                     /*while ((currentLine = reader.readLine()) != null)
                     {                        
