@@ -54,7 +54,9 @@ L = [a-zA-Z_]
 {L}({L}|{D})*                                                    { 
                                                                     if(yylength() > 31)
                                                                     {
-                                                                        return "IDENTIFIER: " + yytext() + " in line: " + (yyline + 1) + " columns: " + (yycolumn + 1) + " - " + ((yycolumn + 1) + yylength() - 1) + " exceeded the max limit length. Identifier truncated.";                                                                       
+                                                                        String aux = yytext().substring(0,31);
+                                                                        
+                                                                        return "IDENTIFIER: " + aux + " in line: " + (yyline + 1) + " columns: " + (yycolumn + 1) + " - " + ((yycolumn + 1) + yylength() - 1) + " exceeded the max limit length. Identifier truncated.";                                                                       
                                                                     }
                                                                     else 
                                                                     {
@@ -65,7 +67,7 @@ L = [a-zA-Z_]
 {D}+	                                                         { return "INTEGER: " + yytext() + " in line: " + (yyline + 1) + " columns: " + (yycolumn + 1) + " - " + ((yycolumn + 1) + yylength() - 1); }
 
 // HEXADECIMALs
-"0x"[0-9A-F]+ | "0x"[0-9a-f]+ | "0X"[0-9A-F]+ | "0X"[0-9a-f]+    { return "INTEGER HEXADECIMAL: " + yytext() + " in line: " + yyline + " columns: " + (yycolumn + 1) + " - " + ((yycolumn + 1) + yylength() - 1); }
+0[xX][0-9a-fA-F]+    { return "INTEGER HEXADECIMAL: " + yytext() + " in line: " + yyline + " columns: " + (yycolumn + 1) + " - " + ((yycolumn + 1) + yylength() - 1); }
 
 // DOUBLEs
 [-+]?[0-9]+"."|[-+]?[0-9]+"."([0-9]+|("E"|"e")[-+]?[0-9]+|[0-9]+("E"|"e")[-+]?[0-9]+) { return "DOUBLE: " + yytext() + " in line: " + (yyline + 1) + " columns: " + (yycolumn + 1) + " - " + ((yycolumn + 1) + yylength() - 1); }

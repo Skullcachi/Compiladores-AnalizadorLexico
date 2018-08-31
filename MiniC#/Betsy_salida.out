@@ -1,0 +1,267 @@
+
+RESERVED WORD: class in line: 5 columns: 1 - 5.
+
+IDENTIFIER: Animal in line: 5 columns: 7 - 12.
+
+OPERATOR OR PUNTATION MARK: { in line: 5 columns: 14 - 14.
+
+RESERVED WORD: int in line: 6 columns: 3 - 5.
+
+IDENTIFIER: height in line: 6 columns: 7 - 12.
+
+OPERATOR OR PUNTATION MARK: ; in line: 6 columns: 13 - 13.
+
+RESERVED WORD: double in line: 7 columns: 3 - 8.
+
+IDENTIFIER: weight in line: 7 columns: 10 - 15.
+
+OPERATOR OR PUNTATION MARK: ; in line: 7 columns: 16 - 16.
+
+RESERVED WORD: void in line: 8 columns: 4 - 7.
+
+IDENTIFIER: Eat in line: 8 columns: 9 - 11.
+
+OPERATOR OR PUNTATION MARK: () in line: 8 columns: 12 - 13.
+
+OPERATOR OR PUNTATION MARK: { in line: 8 columns: 15 - 15.
+
+IDENTIFIER: weight in line: 8 columns: 17 - 22.
+
+OPERATOR OR PUNTATION MARK: = in line: 8 columns: 24 - 24.
+
+IDENTIFIER: weight in line: 8 columns: 26 - 31.
+
+OPERATOR OR PUNTATION MARK: * in line: 8 columns: 33 - 33.
+
+DOUBLE: 2.0 in line: 8 columns: 35 - 37.
+
+OPERATOR OR PUNTATION MARK: ; in line: 8 columns: 38 - 38.
+
+OPERATOR OR PUNTATION MARK: } in line: 8 columns: 39 - 39.
+
+OPERATOR OR PUNTATION MARK: } in line: 9 columns: 1 - 1.
+
+RESERVED WORD: class in line: 11 columns: 1 - 5.
+
+IDENTIFIER: Cow in line: 11 columns: 7 - 9.
+
+RESERVED WORD: extends in line: 11 columns: 11 - 17.
+
+IDENTIFIER: Animal in line: 11 columns: 19 - 24.
+
+OPERATOR OR PUNTATION MARK: { in line: 11 columns: 26 - 26.
+
+RESERVED WORD: string in line: 12 columns: 3 - 8.
+
+IDENTIFIER: name in line: 12 columns: 10 - 13.
+
+OPERATOR OR PUNTATION MARK: ; in line: 12 columns: 14 - 14.
+
+RESERVED WORD: void in line: 13 columns: 3 - 6.
+
+IDENTIFIER: Moo in line: 13 columns: 8 - 10.
+
+OPERATOR OR PUNTATION MARK: () in line: 13 columns: 11 - 12.
+
+OPERATOR OR PUNTATION MARK: { in line: 13 columns: 14 - 14.
+
+OPERATOR OR PUNTATION MARK: } in line: 14 columns: 1 - 1.
+
+RESERVED WORD: int in line: 16 columns: 1 - 3.
+
+IDENTIFIER: a in line: 16 columns: 5 - 5.
+
+OPERATOR OR PUNTATION MARK: ; in line: 16 columns: 6 - 6.
+
+RESERVED WORD: void in line: 18 columns: 1 - 4.
+
+IDENTIFIER: main in line: 18 columns: 6 - 9.
+
+OPERATOR OR PUNTATION MARK: () in line: 18 columns: 10 - 11.
+
+OPERATOR OR PUNTATION MARK: { in line: 18 columns: 13 - 13.
+
+RESERVED WORD: int in line: 19 columns: 4 - 6.
+
+IDENTIFIER: b in line: 19 columns: 8 - 8.
+
+OPERATOR OR PUNTATION MARK: ; in line: 19 columns: 9 - 9.
+
+RESERVED WORD: int in line: 20 columns: 4 - 6.
+
+IDENTIFIER: a in line: 20 columns: 8 - 8.
+
+OPERATOR OR PUNTATION MARK: ; in line: 20 columns: 9 - 9.
+
+RESERVED WORD: int in line: 21 columns: 4 - 6.
+
+IDENTIFIER: d in line: 21 columns: 8 - 8.
+
+OPERATOR OR PUNTATION MARK: ; in line: 21 columns: 9 - 9.
+
+RESERVED WORD: int in line: 22 columns: 4 - 6.
+
+IDENTIFIER: INT in line: 22 columns: 8 - 10.
+
+OPERATOR OR PUNTATION MARK: ; in line: 22 columns: 11 - 11.
+
+IDENTIFIER: d in line: 24 columns: 4 - 4.
+
+OPERATOR OR PUNTATION MARK: = in line: 24 columns: 6 - 6.
+
+OPERATOR OR PUNTATION MARK: . in line: 24 columns: 8 - 8.
+
+INTEGER: 12 in line: 24 columns: 9 - 10.
+
+OPERATOR OR PUNTATION MARK: ; in line: 24 columns: 11 - 11.
+
+IDENTIFIER: a in line: 25 columns: 4 - 4.
+
+OPERATOR OR PUNTATION MARK: = in line: 25 columns: 6 - 6.
+
+OPERATOR OR PUNTATION MARK: . in line: 25 columns: 8 - 8.
+
+INTEGER: 12 in line: 25 columns: 9 - 10.
+
+IDENTIFIER: E in line: 25 columns: 11 - 11.
+
+OPERATOR OR PUNTATION MARK: + in line: 25 columns: 12 - 12.
+
+INTEGER: 2 in line: 25 columns: 13 - 13.
+
+OPERATOR OR PUNTATION MARK: ; in line: 25 columns: 14 - 14.
+
+IDENTIFIER: INT in line: 26 columns: 4 - 6.
+
+OPERATOR OR PUNTATION MARK: = in line: 26 columns: 8 - 8.
+
+DOUBLE: 12.E2 in line: 26 columns: 10 - 14.
+
+IDENTIFIER: b in line: 27 columns: 4 - 4.
+
+OPERATOR OR PUNTATION MARK: = in line: 27 columns: 6 - 6.
+
+DOUBLE: 1.12 in line: 27 columns: 8 - 11.
+
+IDENTIFIER: E in line: 27 columns: 12 - 12.
+
+OPERATOR OR PUNTATION MARK: + in line: 27 columns: 13 - 13.
+
+OPERATOR OR PUNTATION MARK: - in line: 27 columns: 14 - 14.
+
+INTEGER: 2 in line: 27 columns: 15 - 15.
+
+OPERATOR OR PUNTATION MARK: ; in line: 27 columns: 16 - 16.
+
+IDENTIFIER: b in line: 28 columns: 4 - 4.
+
+OPERATOR OR PUNTATION MARK: = in line: 28 columns: 6 - 6.
+
+INTEGER: 000003 in line: 28 columns: 8 - 13.
+
+OPERATOR OR PUNTATION MARK: ; in line: 28 columns: 14 - 14.
+
+IDENTIFIER: a in line: 29 columns: 4 - 4.
+
+OPERATOR OR PUNTATION MARK: = in line: 29 columns: 6 - 6.
+
+IDENTIFIER: b in line: 29 columns: 8 - 8.
+
+OPERATOR OR PUNTATION MARK: + in line: 29 columns: 10 - 10.
+
+INTEGER: 2 in line: 29 columns: 12 - 12.
+
+OPERATOR OR PUNTATION MARK: ; in line: 29 columns: 13 - 13.
+
+OPERATOR OR PUNTATION MARK: } in line: 30 columns: 1 - 1.
+
+RESERVED WORD: void in line: 33 columns: 1 - 4.
+
+IDENTIFIER: main in line: 33 columns: 6 - 9.
+
+OPERATOR OR PUNTATION MARK: () in line: 33 columns: 10 - 11.
+
+OPERATOR OR PUNTATION MARK: { in line: 33 columns: 13 - 13.
+
+RESERVED WORD: class in line: 34 columns: 3 - 7.
+
+IDENTIFIER: Cow in line: 34 columns: 9 - 11.
+
+IDENTIFIER: betsy in line: 34 columns: 13 - 17.
+
+OPERATOR OR PUNTATION MARK: ; in line: 34 columns: 18 - 18.
+
+IDENTIFIER: variable_whose_name_is_much_too in line: 35 columns: 3 - 38 exceeded the max limit length. Identifier truncated..
+
+OPERATOR OR PUNTATION MARK: = in line: 35 columns: 39 - 39.
+
+STRING: "hola como estas" in line: 35 columns: 40 - 56.
+
+OPERATOR OR PUNTATION MARK: ; in line: 35 columns: 57 - 57.
+
+IDENTIFIER: betsy in line: 36 columns: 3 - 7.
+
+OPERATOR OR PUNTATION MARK: = in line: 36 columns: 9 - 9.
+
+RESERVED WORD: New in line: 36 columns: 11 - 13.
+
+OPERATOR OR PUNTATION MARK: ( in line: 36 columns: 14 - 14.
+
+IDENTIFIER: Cow in line: 36 columns: 15 - 17.
+
+OPERATOR OR PUNTATION MARK: ) in line: 36 columns: 18 - 18.
+
+OPERATOR OR PUNTATION MARK: ; in line: 36 columns: 19 - 19.
+
+IDENTIFIER: betsy in line: 37 columns: 3 - 7.
+
+OPERATOR OR PUNTATION MARK: . in line: 37 columns: 8 - 8.
+
+IDENTIFIER: height in line: 37 columns: 9 - 14.
+
+OPERATOR OR PUNTATION MARK: = in line: 37 columns: 16 - 16.
+
+INTEGER HEXADECIMAL: 0xa2 in line: 36 columns: 18 - 21.
+
+OPERATOR OR PUNTATION MARK: + in line: 37 columns: 23 - 23.
+
+INTEGER HEXADECIMAL: 0XFa4 in line: 36 columns: 25 - 29.
+
+OPERATOR OR PUNTATION MARK: ; in line: 37 columns: 30 - 30.
+
+IDENTIFIER: betsy in line: 38 columns: 3 - 7.
+
+OPERATOR OR PUNTATION MARK: . in line: 38 columns: 8 - 8.
+
+IDENTIFIER: weight in line: 38 columns: 9 - 14.
+
+OPERATOR OR PUNTATION MARK: = in line: 38 columns: 16 - 16.
+
+DOUBLE: 1.456 in line: 38 columns: 18 - 22.
+
+OPERATOR OR PUNTATION MARK: ; in line: 38 columns: 23 - 23.
+
+IDENTIFIER: besty in line: 39 columns: 3 - 7.
+
+OPERATOR OR PUNTATION MARK: . in line: 39 columns: 8 - 8.
+
+IDENTIFIER: name in line: 39 columns: 9 - 12.
+
+OPERATOR OR PUNTATION MARK: = in line: 39 columns: 14 - 14.
+
+STRING: "Betsy" in line: 39 columns: 16 - 22.
+
+OPERATOR OR PUNTATION MARK: ; in line: 39 columns: 23 - 23.
+
+IDENTIFIER: betsy in line: 40 columns: 3 - 7.
+
+OPERATOR OR PUNTATION MARK: . in line: 40 columns: 8 - 8.
+
+IDENTIFIER: Moo in line: 40 columns: 9 - 11.
+
+OPERATOR OR PUNTATION MARK: () in line: 40 columns: 12 - 13.
+
+OPERATOR OR PUNTATION MARK: ; in line: 40 columns: 14 - 14.
+
+OPERATOR OR PUNTATION MARK: } in line: 41 columns: 1 - 1.
+EOF
