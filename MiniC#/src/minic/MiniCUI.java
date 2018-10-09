@@ -113,11 +113,11 @@ public class MiniCUI extends javax.swing.JFrame {
                 if (hayError)
                 {
 
-                    writerErrores = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(PATH + "errores_encontrados.txt"), "utf-8"));
-                    for (int i = 0; i < listaErrores.size(); i++) {
-                        writerErrores.write(listaErrores.get(i));
-                    }
-                    writerErrores.close();
+                        writerErrores = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(PATH + "errores_encontrados.txt"), "utf-8"));
+                        for (int i = 0; i < listaErrores.size(); i++) {
+                            writerErrores.write(listaErrores.get(i));
+                        }
+                        writerErrores.close();
                     
                     
                 }
