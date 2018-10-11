@@ -1,0 +1,253 @@
+package Lexic;
+
+import java_cup.runtime.*;
+import java.io.FileReader;
+
+parser code {:
+
+    public void report_error(String message, Object info){
+        StringBuilder m = new StringBuilder("Error");
+        if (info instanceof java_cup.runtime.Symbol){
+            java_cup.runtime.Symbol s = ((java_cup.runtime.Symbol) info);
+            m.append("Sintactico: simbolo: " + s.value.toString()+ " no reconocido.");
+            if (s.left >= 0) {
+                m.append(" in line " + (s.left + 1));
+                if (s.right >= 0)
+                {
+                    m.append(", column " + (s.right + 1));
+                }
+            }
+        }
+        m.append(" : " + message);
+        System.err.println(m);
+    }
+
+    public void report_fatal_error(String message, Object info){
+        StringBuilder m = new StringBuilder("Error");
+        if (info instanceof java_cup.runtime.Symbol){
+            java_cup.runtime.Symbol s = ((java_cup.runtime.Symbol) info);
+            if (s.left >= 0) {
+                m.append(" in line " + (s.left + 1));
+                if (s.right >= 0)
+                {
+                    m.append(", column " + (s.right + 1));
+                }
+            }
+        }
+        m.append(" : " + message);
+        System.err.println(m);
+    }
+
+    public static void main(String[] args){
+        try {
+            System.out.println("\n*** Resultados finales ***");
+            asintactico asin = new asintactico(
+                    new Yylex( new FileReader(args[0])));
+            Object result = asin.parse().value;            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+:};
+
+/* Declaracion de simbolos terminales y no terminales */
+terminal        SUMA, RESTA, MULT, DIV, MOD, MENOR, MENOR_IGUAL, MAYOR, MAYOR_IGUAL, ASIGNAR, IGUAL, DIFERENTE, AND, OR, NOT, SEMI_COLON, COMA, PUNTO, COR_IZQ, COR_DER, PAR_IZQ, PAR_DER, LLAVE_IZQ, LLAVE_DER, CORCHETES, PARENTESIS, LLAVES;
+terminal        VOID, INT, DOUBLE, HEXADECIMAL, BOOL, STRING, CLASS, INTERFACE, NULL, THIS, EXTENDS, IMPLEMENTS, FOR, WHILE, IF, ELSE, RETURN, BREAK, NEW, NEWARRAY, PRINT, READINTEGER, READLINE, MALLOC;
+terminal        TRUE, FALSE;
+terminal        INTEGER, IDENT, GETBYTE, SETBYTE, INTCONSTANT, DOUBLECONSTANT, BOOLCONSTANT, STRINGCONSTANT;
+
+non terminal    Program, Decl, VariableDecl, Variable, Type, FunctionDecl, Formals, ClassDecl, Field, InterfaceDecl, Prototype, StmtBlock, Stmt, IfStmt, WhileStmt, ForStmt, ReturnStmt, BreakStmt, PrintStmt, Expr, LValue, Call, LibCall, Actuals, Constant;
+non terminal    FunctionDeclPrima, Extends, Implements, ImplementsClass, ClassField, InterfacePrototype, PrototypePrima, StmtBlockVariableDecl, StmtBlockStmt, StmtExpr, IfStmtElseStmt, PrintStmtExpr, CallActuals, FormalsPrima;
+
+/* Precedencias */
+precedence left SUMA, RESTA, MULT, DIV, MOD;
+precedence left MENOR, MENOR_IGUAL, MAYOR, MAYOR_IGUAL, ASIGNAR, IGUAL, DIFERENTE, AND, OR, NOT;
+precedence left ELSE;
+/*precedence left PAR_DER;*/
+/*precedence left IDENT;*/
+
+/* Declaracion de la gramatica */
+Program ::= Program Decl
+        | /* EPSILON */
+        ;
+
+Decl    ::= VariableDecl
+        |   FunctionDecl
+        |   ClassDecl
+        |   InterfaceDecl
+        |   error SEMI_COLON
+        |   error LLAVE_DER
+        ;
+
+VariableDecl ::=    Variable SEMI_COLON 
+        ;
+
+Variable ::=    Type IDENT
+        ;
+
+Type ::=    INT
+    |       DOUBLE
+    |       BOOL
+    |       STRING
+    |       IDENT
+    |       Type CORCHETES
+    ;
+
+FunctionDecl ::=    Type FunctionDeclPrima
+            |       VOID FunctionDeclPrima
+            ;
+
+FunctionDeclPrima ::=   IDENT PAR_IZQ Formals PAR_DER StmtBlock
+                    ;
+
+Formals ::= FormalsPrima Variable
+        |   /* EPSILON */
+        ;
+
+FormalsPrima ::= FormalsPrima Variable COMA
+            |   /*EPSILON*/
+            ;
+
+ClassDecl   ::= CLASS IDENT Extends Implements LLAVE_IZQ ClassField LLAVE_DER
+        ;
+
+Extends ::= EXTENDS IDENT
+        |   /* EPSILON */
+        ;
+
+Implements  ::= IMPLEMENTS ImplementsClass
+            | /* EPSILON */
+            ;
+
+ImplementsClass ::= ImplementsClass COMA IDENT
+                |   IDENT
+                ;
+
+ClassField  ::= ClassField Field
+            | /* EPSILON */
+            ;
+
+Field   ::= VariableDecl
+        | FunctionDecl
+        ;
+
+InterfaceDecl   ::= INTERFACE IDENT LLAVE_IZQ InterfacePrototype LLAVE_DER
+                ;
+
+InterfacePrototype  ::= InterfacePrototype Prototype
+                    |   /* EPSILON */
+                    ;
+
+Prototype   ::= Type PrototypePrima
+            |   VOID PrototypePrima
+            ;
+
+PrototypePrima  ::= IDENT PAR_IZQ Formals PAR_DER SEMI_COLON
+                ;
+
+StmtBlock   ::= LLAVE_IZQ StmtBlockVariableDecl StmtBlockStmt LLAVE_DER
+            ;
+
+StmtBlockVariableDecl   ::= StmtBlockVariableDecl VariableDecl
+                        |   /* EPSILON */
+                        ;
+
+StmtBlockStmt   ::= Stmt StmtBlockStmt
+                |   /* EPSILON */
+                ;
+
+Stmt    ::= StmtExpr SEMI_COLON
+        |   IfStmt
+        |   WhileStmt
+        |   ForStmt
+        |   BreakStmt
+        |   ReturnStmt
+        |   PrintStmt
+        |   StmtBlock
+        ;
+
+StmtExpr    ::= Expr
+            |   /* EPSILON */   
+            ;
+
+IfStmt  ::= IF PAR_IZQ Expr PAR_DER Stmt IfStmtElseStmt
+        ;
+
+IfStmtElseStmt  ::= ELSE Stmt
+                |   /* EPSILON */
+                ;
+
+WhileStmt   ::= WHILE PAR_IZQ Expr PAR_DER Stmt
+            ;
+
+ForStmt ::= FOR PAR_IZQ StmtExpr SEMI_COLON Expr SEMI_COLON StmtExpr PAR_DER Stmt
+        ;
+
+ReturnStmt  ::= RETURN Expr SEMI_COLON
+            ;
+
+BreakStmt ::=   BREAK SEMI_COLON
+            ;
+
+PrintStmt   ::= PRINT PAR_IZQ PrintStmtExpr PAR_DER SEMI_COLON
+            ;
+
+PrintStmtExpr   ::= PrintStmtExpr COMA Expr
+                |   Expr
+                ;
+
+Expr    ::= LValue ASIGNAR Expr
+        |   Constant
+        |   LValue
+        |   THIS
+        |   Call
+        |   PAR_IZQ Expr PAR_DER
+        |   Expr SUMA Expr
+        |   Expr RESTA Expr
+        |   Expr MULT Expr
+        |   Expr DIV Expr
+        |   Expr MOD Expr
+        |   RESTA Expr
+        |   Expr MENOR Expr
+        |   Expr MENOR_IGUAL Expr
+        |   Expr MAYOR Expr
+        |   Expr MAYOR_IGUAL Expr
+        |   Expr IGUAL Expr
+        |   Expr DIFERENTE Expr
+        |   Expr AND Expr
+        |   Expr OR Expr
+        |   NOT Expr
+        |   NEW PAR_IZQ IDENT PAR_DER
+        |   NEWARRAY PAR_IZQ Expr COMA Type PAR_DER
+        |   READINTEGER PARENTESIS
+        |   READLINE PARENTESIS
+        |   MALLOC PAR_IZQ Expr PAR_DER
+        ;
+
+LValue ::=  IDENT
+        |   Expr PUNTO IDENT
+        |   Expr COR_IZQ Expr COR_DER
+        ;
+
+Call    ::= IDENT PAR_IZQ Actuals PAR_DER
+        |   Expr PUNTO IDENT CallActuals
+        |   Expr PUNTO LibCall CallActuals
+        ;
+
+CallActuals ::= PAR_IZQ Actuals PAR_DER
+            ;
+
+LibCall ::= GETBYTE PAR_IZQ Expr PAR_DER
+        |   SETBYTE PAR_IZQ Expr COMA Expr PAR_DER
+        ;
+
+Actuals  ::= PrintStmtExpr
+         |   /* EPSILON */
+         ;
+Constant ::= INTCONSTANT
+        |   DOUBLECONSTANT
+        |   BOOLCONSTANT
+        |   STRINGCONSTANT
+        |   NULL
+        ;

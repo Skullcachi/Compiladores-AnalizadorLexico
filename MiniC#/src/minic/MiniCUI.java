@@ -5,6 +5,7 @@
  */
 package minic;
 
+import Lexic.asintactico;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -16,6 +17,8 @@ import java.io.Reader;
 import java.util.ArrayList;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import java_cup.runtime.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -98,7 +101,7 @@ public class MiniCUI extends javax.swing.JFrame {
         String currentLine;
         BufferedWriter writer;
         BufferedWriter writerErrores;
-        FileFilter filter = new FileNameExtensionFilter("C# Files", "txt");
+        FileFilter filter = new FileNameExtensionFilter("All files", "txt");
         resultados = "";
         jFileChooser1.setFileFilter(filter);
         try {
@@ -140,16 +143,18 @@ public class MiniCUI extends javax.swing.JFrame {
                     }
                     writerErrores.close();
                 }
+                
             }
             else
             {
                 jTextArea1.append("No file has been selected.\n");
             }
-
+            
         }
         catch(IOException ex){
             System.out.println(ex.getMessage());
         }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -199,29 +204,48 @@ public class MiniCUI extends javax.swing.JFrame {
         Lexic.Yylex lexer = new Lexic.Yylex(reader);
         
         while (true){
-            String token = lexer.yylex();
-            if (token == null){
+            Symbol token = lexer.next_token();
+            if (token.sym == 0){
                 resultados = resultados + "EOF";
                 jTextArea1.setText(resultados);
                 hayError = false;
+                
+                try
+                {
+                    String[] testFile = { filetoread.getName()};
+                    asintactico.main(testFile);
+                }
+                catch(Exception ex)
+                {
+                    JOptionPane.showMessageDialog(this,ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+                }
                 return;
             }
             else
             {
-                if (token.contains("Lexical error:"))
-                {                    
+//                if (token.toString().contains("Lexical error:"))
+//                {                    
+//                    resultados = resultados + "\n*** ERROR: line: " + lexer.line + ". \n*** Unrecognized char: '" + lexer.lexeme + "'.\n\n";
+//                    hayError = true;
+//                    listaErrores.add("\n*** ERROR: line: " + lexer.line + ". \n*** Unrecognized char: '" + lexer.lexeme + "'.\n\n");
+//                }
+//                else 
+//                {                    
+//                    resultados +=  "\n" + token + ".\n";
+//                }
+                
+                if (token.sym == 1)
+                {
                     resultados = resultados + "\n*** ERROR: line: " + lexer.line + ". \n*** Unrecognized char: '" + lexer.lexeme + "'.\n\n";
                     hayError = true;
                     listaErrores.add("\n*** ERROR: line: " + lexer.line + ". \n*** Unrecognized char: '" + lexer.lexeme + "'.\n\n");
                 }
                 else 
                 {                    
-                    resultados +=  "\n" + token + ".\n";
+                    resultados +=  "\n Token: " + token.value + ".\n";
                 }
             }
-        }
-        
-        
+        }        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

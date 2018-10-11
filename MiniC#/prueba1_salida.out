@@ -1,0 +1,115 @@
+
+ Token: int.
+
+ Token: IDENTIFIER: c.
+
+ Token: ;.
+
+ Token: int.
+
+ Token: IDENTIFIER: a.
+
+ Token: =.
+
+ Token: IDENTIFIER: b.
+
+ Token: ;.
+
+ Token: int.
+
+ Token: IDENTIFIER: f1.
+
+ Token: (.
+
+ Token: int.
+
+ Token: IDENTIFIER: d.
+
+ Token: ,.
+
+ Token: int.
+
+ Token: IDENTIFIER: e.
+
+ Token: ).
+
+ Token: {.
+
+ Token: int.
+
+ Token: IDENTIFIER: a.
+
+ Token: ;.
+
+ Token: bool.
+
+ Token: IDENTIFIER: b.
+
+ Token: ;.
+
+ Token: IDENTIFIER: b.
+
+ Token: =.
+
+ Token: IDENTIFIER: d.
+
+ Token: >=.
+
+ Token: IDENTIFIER: e.
+
+ Token: ;.
+
+ Token: if.
+
+ Token: (.
+
+ Token: !.
+
+ Token: IDENTIFIER: b.
+
+ Token: ).
+
+ Token: {.
+
+ Token: IDENTIFIER: a.
+
+ Token: =.
+
+ Token: IDENTIFIER: d.
+
+ Token: +.
+
+ Token: IDENTIFIER: e.
+
+ Token: ;.
+
+ Token: }.
+
+ Token: else.
+
+ Token: IDENTIFIER: a.
+
+ Token: =.
+
+ Token: DOUBLE: 2.34.
+
+ Token: ;.
+
+ Token: return.
+
+ Token: IDENTIFIER: a.
+
+ Token: ;.
+
+ Token: }.
+
+ Token: int.
+
+ Token: IDENTIFIER: c.
+
+ Token: =.
+
+ Token: IDENTIFIER: d.
+
+ Token: ;.
+EOF
