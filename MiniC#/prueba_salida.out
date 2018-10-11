@@ -1,0 +1,21 @@
+
+ Token: void.
+
+ Token: IDENTIFIER: main.
+
+ Token: (.
+
+ Token: ).
+
+ Token: {.
+
+ Token: IDENTIFIER: a.
+
+ Token: =.
+
+ Token: IDENTIFIER: b.
+
+ Token: ;.
+
+ Token: }.
+EOF

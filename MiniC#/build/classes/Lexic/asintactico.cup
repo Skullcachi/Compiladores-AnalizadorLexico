@@ -220,8 +220,8 @@ Expr    ::= LValue ASIGNAR Expr
         |   NOT Expr
         |   NEW PAR_IZQ IDENT PAR_DER
         |   NEWARRAY PAR_IZQ Expr COMA Type PAR_DER
-        |   READINTEGER PARENTESIS
-        |   READLINE PARENTESIS
+        |   READINTEGER PAR_IZQ PAR_DER
+        |   READLINE PAR_IZQ PAR_DER
         |   MALLOC PAR_IZQ Expr PAR_DER
         ;
 

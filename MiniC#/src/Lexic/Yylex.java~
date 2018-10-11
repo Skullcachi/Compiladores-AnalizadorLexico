@@ -795,7 +795,7 @@ public class Yylex implements java_cup.runtime.Scanner {
           case 69: break;
           case 5: 
             { //return "INTEGER: " + yytext() + " in line: " + (yyline + 1) + " columns: " + (yycolumn + 1) + " - " + ((yycolumn + 1) + yylength() - 1); 
-                                                                    return symbol(sym.INTEGER, new Integer(yytext()));
+                                                                    return symbol(sym.INTCONSTANT, new Integer(yytext()));
             }
           case 70: break;
           case 6: 
@@ -891,7 +891,7 @@ public class Yylex implements java_cup.runtime.Scanner {
           case 90: break;
           case 26: 
             { //return "DOUBLE: " + yytext() + " in line: " + (yyline + 1) + " columns: " + (yycolumn + 1) + " - " + ((yycolumn + 1) + yylength() - 1); 
-                                                                                            return symbol(sym.DOUBLE, new String("DOUBLE: " + yytext()));
+                                                                                            return symbol(sym.DOUBLECONSTANT, new String("DOUBLE: " + yytext()));
             }
           case 91: break;
           case 27: 
