@@ -58,7 +58,7 @@ terminal        TRUE, FALSE;
 terminal        INTEGER, IDENT, GETBYTE, SETBYTE, INTCONSTANT, DOUBLECONSTANT, BOOLCONSTANT, STRINGCONSTANT;
 
 non terminal    Program, Decl, VariableDecl, Variable, Type, FunctionDecl, Formals, ClassDecl, Field, InterfaceDecl, Prototype, StmtBlock, Stmt, IfStmt, WhileStmt, ForStmt, ReturnStmt, BreakStmt, PrintStmt, Expr, LValue, Call, LibCall, Actuals, Constant;
-non terminal    FunctionDeclPrima, Extends, Implements, ImplementsClass, ClassField, InterfacePrototype, PrototypePrima, StmtBlockVariableDecl, StmtBlockStmt, StmtExpr, IfStmtElseStmt, PrintStmtExpr, CallActuals, FormalsPrima;
+non terminal    FunctionDeclPrima, Extends, Implements, ImplementsClass, ClassField, InterfacePrototype, PrototypePrima, StmtBlockVariableDecl, StmtContent, StmtExpr, IfStmtElseStmt, PrintStmtExpr, CallActuals, FormalsPrima;
 
 /* Precedencias */
 precedence left SUMA, RESTA, MULT, DIV, MOD;
@@ -146,16 +146,18 @@ Prototype   ::= Type PrototypePrima
 PrototypePrima  ::= IDENT PAR_IZQ Formals PAR_DER SEMI_COLON
                 ;
 
-StmtBlock   ::= LLAVE_IZQ StmtBlockVariableDecl StmtBlockStmt LLAVE_DER
+StmtBlock   ::= LLAVE_IZQ StmtContent LLAVE_DER
             ;
 
-StmtBlockVariableDecl   ::= StmtBlockVariableDecl VariableDecl
-                        |   /* EPSILON */
+StmtContent ::= StmtBlockVariableDecl StmtContent
+            |   /* EPSILON */
+            ;
+
+StmtBlockVariableDecl   ::=  VariableDecl
+                        |   Stmt
                         ;
 
-StmtBlockStmt   ::= Stmt StmtBlockStmt
-                |   /* EPSILON */
-                ;
+
 
 Stmt    ::= StmtExpr SEMI_COLON
         |   IfStmt
