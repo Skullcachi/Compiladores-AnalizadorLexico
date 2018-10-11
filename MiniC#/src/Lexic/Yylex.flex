@@ -81,72 +81,72 @@ L = [a-zA-Z_]
 // STRINGs
 \"[^\r\n]+\"                                                         { 
                                                                         /*return "STRING: " + yytext() + " in line: " + (yyline + 1) + " columns: " + (yycolumn + 1) + " - " + ((yycolumn + 1) + yylength() - 1);*/
-                                                                        return symbol(sym.STRING, new String(yytext()));
+                                                                        return symbol(sym.STRINGCONSTANT, new String(yytext()));
                                                                      }
 
 // BOOLEANs
 "true" | "TRUE"                                                      { 
                                                                         /*return "BOOLEAN: " + yytext() + " in line: " + (yyline + 1) + " columns: " + (yycolumn + 1) + " - " + ((yycolumn + 1) + yylength() - 1);*/ 
-                                                                        return symbol(sym.TRUE, new String(yytext()));
+                                                                        return symbol(sym.BOOLCONSTANT, new String(yytext()));
                                                                     }
 
 "false" | "FALSE"                                                      { 
                                                                         /*return "BOOLEAN: " + yytext() + " in line: " + (yyline + 1) + " columns: " + (yycolumn + 1) + " - " + ((yycolumn + 1) + yylength() - 1);*/ 
-                                                                        return symbol(sym.FALSE, new String(yytext()));
+                                                                        return symbol(sym.BOOLCONSTANT, new String(yytext()));
                                                                     }
 
 // RESERVED_WORDs
 /*{RESERVED_WORDS}                                                   { return "RESERVED WORD: " + yytext() + " in line: " + (yyline + 1) + " columns: " + (yycolumn + 1) + " - " + ((yycolumn + 1) + yylength() - 1); }*/
 
-"void"                                                               { return symbol(sym.VOID, new String(yytext())); }
+"void"                                                               { return symbol(sym.VOID, new String("RESERVED WORD: " + yytext())); }
 
-"int"                                                               { return symbol(sym.INT, new String(yytext())); } 
+"int"                                                               { return symbol(sym.INT, new String("RESERVED WORD: " + yytext())); } 
 
-"double"                                                             { return symbol(sym.DOUBLE, new String(yytext())); }
+"double"                                                             { return symbol(sym.DOUBLE, new String("RESERVED WORD: " + yytext())); }
 
-"bool"                                                               { return symbol(sym.BOOL, new String(yytext())); }
+"bool"                                                               { return symbol(sym.BOOL, new String("RESERVED WORD: " + yytext())); }
 
-"string"                                                             { return symbol(sym.STRING, new String(yytext())); }
+"string"                                                             { return symbol(sym.STRING, new String("RESERVED WORD: " + yytext())); }
 
-"class"                                                              { return symbol(sym.CLASS, new String(yytext())); }
+"class"                                                              { return symbol(sym.CLASS, new String("RESERVED WORD: " + yytext())); }
 
-"interface"                                                          { return symbol(sym.INTERFACE, new String(yytext())); }
+"interface"                                                          { return symbol(sym.INTERFACE, new String("RESERVED WORD: " + yytext())); }
 
-"null"                                                               { return symbol(sym.NULL, new String(yytext())); }
+"null"                                                               { return symbol(sym.NULL, new String("RESERVED WORD: " + yytext())); }
 
-"this"                                                               { return symbol(sym.THIS, new String(yytext())); }
+"this"                                                               { return symbol(sym.THIS, new String("RESERVED WORD: " + yytext())); }
 
-"extends"                                                            { return symbol(sym.EXTENDS, new String(yytext())); }
+"extends"                                                            { return symbol(sym.EXTENDS, new String("RESERVED WORD: " + yytext())); }
 
-"implements"                                                         { return symbol(sym.IMPLEMENTS, new String(yytext())); }
+"implements"                                                         { return symbol(sym.IMPLEMENTS, new String("RESERVED WORD: " + yytext())); }
 
-"for"                                                                { return symbol(sym.FOR, new String(yytext())); }
+"for"                                                                { return symbol(sym.FOR, new String("RESERVED WORD: " + yytext())); }
 
-"while"                                                              { return symbol(sym.WHILE, new String(yytext())); }
+"while"                                                              { return symbol(sym.WHILE, new String("RESERVED WORD: " + yytext())); }
 
-"if"                                                                 { return symbol(sym.IF, new String(yytext())); }
+"if"                                                                 { return symbol(sym.IF, new String("RESERVED WORD: " + yytext())); }
 
-"else"                                                               { return symbol(sym.ELSE, new String(yytext())); }
+"else"                                                               { return symbol(sym.ELSE, new String("RESERVED WORD: " + yytext())); }
 
-"return"                                                             { return symbol(sym.RETURN, new String(yytext())); }
+"return"                                                             { return symbol(sym.RETURN, new String("RESERVED WORD: " + yytext())); }
 
-"break"                                                              { return symbol(sym.BREAK, new String(yytext())); }
+"break"                                                              { return symbol(sym.BREAK, new String("RESERVED WORD: " + yytext())); }
 
-"new"                                                                { return symbol(sym.NEW, new String(yytext())); }
+"New"                                                                { return symbol(sym.NEW, new String("RESERVED WORD: " + yytext())); }
 
-"newarray"                                                           { return symbol(sym.NEWARRAY, new String(yytext())); }
+"NewArray"                                                           { return symbol(sym.NEWARRAY, new String("RESERVED WORD: " + yytext())); }
 
-"print"                                                              { return symbol(sym.PRINT, new String(yytext())); }
+"Print"                                                              { return symbol(sym.PRINT, new String("RESERVED WORD: " + yytext())); }
 
-"readinteger"                                                        { return symbol(sym.READINTEGER, new String(yytext())); }
+"ReadInteger"                                                        { return symbol(sym.READINTEGER, new String("RESERVED WORD: " + yytext())); }
 
-"readline"                                                           { return symbol(sym.READLINE, new String(yytext())); }
+"ReadLine"                                                           { return symbol(sym.READLINE, new String("RESERVED WORD: " + yytext())); }
 
-"malloc"                                                             { return symbol(sym.MALLOC, new String(yytext())); }
+"Malloc"                                                             { return symbol(sym.MALLOC, new String("RESERVED WORD: " + yytext())); }
 
-"GetByte"                                                            { return symbol(sym.GETBYTE, new String(yytext())); }
+"GetByte"                                                            { return symbol(sym.GETBYTE, new String("RESERVED WORD: " + yytext())); }
 
-"SetByte"                                                            { return symbol(sym.SETBYTE, new String(yytext())); }
+"SetByte"                                                            { return symbol(sym.SETBYTE, new String("RESERVED WORD: " + yytext())); }
 
 // IDENTIFIERs
 {L}({L}|{D})*                                                    { 

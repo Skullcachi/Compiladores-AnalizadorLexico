@@ -1,0 +1,120 @@
+int hola;
+bool prueba;
+string hola2;
+
+// fklglf
+
+int hola ( ) 
+{ 
+	if(hola<hola3)
+	{
+		int hff;
+		
+		5+5   ;
+		
+		this;
+		
+		ReadLine();
+		
+		HOOLA = 4+4;
+		
+		New(hola);
+		
+		ReadInteger( );
+		
+		gkl= 5+4+(4);
+		
+		NewArray( 5,int );
+		
+		prueba.GetByte(5)(5);
+		
+		hola.ssd;
+		
+		HOLA [ 5 && 5 ];
+		
+		/* dffdfdfd 
+		
+		/*****
+		
+		*/
+		
+		
+		
+		if(hola ||hola3)
+		{
+			while(hola!=3.545)
+			{
+				for ( i=0; i<5; i+1) this;
+				return;
+				break;
+			}
+		}
+		else
+		{
+			int hola;
+			prueba=" dfdfdf";
+		}
+		
+	}
+}
+
+int metodoEntero(int go , string go)
+{
+	hola ( fdf );
+	
+	int fggf;
+	
+	ReadInteger( );
+    
+	hola=d;
+
+	int jola;
+	
+	5;
+	
+	hola.metodo(5 );
+	
+	int a; 
+	int b;
+
+	a = 2;
+	b = a + 10;
+
+    
+}
+
+class prueba extends public implements gd22
+{
+	string gdf;
+	
+	void ojalaFuncione ( )
+	{
+	
+	}
+	
+	bool ola;
+	int [] hola;
+
+}
+
+interface gg 
+{
+		
+	int hola ( );
+	
+	void dfjdfk ( string ff , int hola);
+}
+
+class prueba extends public implements gd22{
+// dfdfd
+	string hola ()
+	{
+		for ( i=0; i<5; i+1)
+		{
+			Malloc(hola);
+			
+			return (null);
+		}
+	}
+
+}

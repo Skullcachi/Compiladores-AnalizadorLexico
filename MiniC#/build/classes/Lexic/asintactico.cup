@@ -184,7 +184,7 @@ WhileStmt   ::= WHILE PAR_IZQ Expr PAR_DER Stmt
 ForStmt ::= FOR PAR_IZQ StmtExpr SEMI_COLON Expr SEMI_COLON StmtExpr PAR_DER Stmt
         ;
 
-ReturnStmt  ::= RETURN Expr SEMI_COLON
+ReturnStmt  ::= RETURN StmtExpr SEMI_COLON
             ;
 
 BreakStmt ::=   BREAK SEMI_COLON

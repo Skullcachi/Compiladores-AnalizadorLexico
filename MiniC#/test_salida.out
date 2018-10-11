@@ -1,0 +1,547 @@
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: hola.
+
+ Token: ;.
+
+ Token: RESERVED WORD: bool.
+
+ Token: IDENTIFIER: prueba.
+
+ Token: ;.
+
+ Token: RESERVED WORD: string.
+
+ Token: IDENTIFIER: hola2.
+
+ Token: ;.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: hola.
+
+ Token: (.
+
+ Token: ).
+
+ Token: {.
+
+ Token: RESERVED WORD: if.
+
+ Token: (.
+
+ Token: IDENTIFIER: hola.
+
+ Token: <.
+
+ Token: IDENTIFIER: hola3.
+
+ Token: ).
+
+ Token: {.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: hff.
+
+ Token: ;.
+
+ Token: 5.
+
+ Token: +.
+
+ Token: 5.
+
+ Token: ;.
+
+ Token: RESERVED WORD: this.
+
+ Token: ;.
+
+ Token: RESERVED WORD: ReadLine.
+
+ Token: (.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: IDENTIFIER: HOOLA.
+
+ Token: =.
+
+ Token: 4.
+
+ Token: +.
+
+ Token: 4.
+
+ Token: ;.
+
+ Token: RESERVED WORD: New.
+
+ Token: (.
+
+ Token: IDENTIFIER: hola.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: RESERVED WORD: ReadInteger.
+
+ Token: (.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: IDENTIFIER: gkl.
+
+ Token: =.
+
+ Token: 5.
+
+ Token: +.
+
+ Token: 4.
+
+ Token: +.
+
+ Token: (.
+
+ Token: 4.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: RESERVED WORD: NewArray.
+
+ Token: (.
+
+ Token: 5.
+
+ Token: ,.
+
+ Token: RESERVED WORD: int.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: IDENTIFIER: prueba.
+
+ Token: ..
+
+ Token: RESERVED WORD: GetByte.
+
+ Token: (.
+
+ Token: 5.
+
+ Token: ).
+
+ Token: (.
+
+ Token: 5.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: IDENTIFIER: hola.
+
+ Token: ..
+
+ Token: IDENTIFIER: ssd.
+
+ Token: ;.
+
+ Token: IDENTIFIER: HOLA.
+
+ Token: [.
+
+ Token: 5.
+
+ Token: &&.
+
+ Token: 5.
+
+ Token: ].
+
+ Token: ;.
+
+ Token: RESERVED WORD: if.
+
+ Token: (.
+
+ Token: IDENTIFIER: hola.
+
+ Token: ||.
+
+ Token: IDENTIFIER: hola3.
+
+ Token: ).
+
+ Token: {.
+
+ Token: RESERVED WORD: while.
+
+ Token: (.
+
+ Token: IDENTIFIER: hola.
+
+ Token: !=.
+
+ Token: DOUBLE: 3.545.
+
+ Token: ).
+
+ Token: {.
+
+ Token: RESERVED WORD: for.
+
+ Token: (.
+
+ Token: IDENTIFIER: i.
+
+ Token: =.
+
+ Token: 0.
+
+ Token: ;.
+
+ Token: IDENTIFIER: i.
+
+ Token: <.
+
+ Token: 5.
+
+ Token: ;.
+
+ Token: IDENTIFIER: i.
+
+ Token: +.
+
+ Token: 1.
+
+ Token: ).
+
+ Token: RESERVED WORD: this.
+
+ Token: ;.
+
+ Token: RESERVED WORD: return.
+
+ Token: ;.
+
+ Token: RESERVED WORD: break.
+
+ Token: ;.
+
+ Token: }.
+
+ Token: }.
+
+ Token: RESERVED WORD: else.
+
+ Token: {.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: hola.
+
+ Token: ;.
+
+ Token: IDENTIFIER: prueba.
+
+ Token: =.
+
+ Token: " dfdfdf".
+
+ Token: ;.
+
+ Token: }.
+
+ Token: }.
+
+ Token: }.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: metodoEntero.
+
+ Token: (.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: go.
+
+ Token: ,.
+
+ Token: RESERVED WORD: string.
+
+ Token: IDENTIFIER: go.
+
+ Token: ).
+
+ Token: {.
+
+ Token: IDENTIFIER: hola.
+
+ Token: (.
+
+ Token: IDENTIFIER: fdf.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: fggf.
+
+ Token: ;.
+
+ Token: RESERVED WORD: ReadInteger.
+
+ Token: (.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: IDENTIFIER: hola.
+
+ Token: =.
+
+ Token: IDENTIFIER: d.
+
+ Token: ;.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: jola.
+
+ Token: ;.
+
+ Token: 5.
+
+ Token: ;.
+
+ Token: IDENTIFIER: hola.
+
+ Token: ..
+
+ Token: IDENTIFIER: metodo.
+
+ Token: (.
+
+ Token: 5.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: a.
+
+ Token: ;.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: b.
+
+ Token: ;.
+
+ Token: IDENTIFIER: a.
+
+ Token: =.
+
+ Token: 2.
+
+ Token: ;.
+
+ Token: IDENTIFIER: b.
+
+ Token: =.
+
+ Token: IDENTIFIER: a.
+
+ Token: +.
+
+ Token: 10.
+
+ Token: ;.
+
+ Token: }.
+
+ Token: RESERVED WORD: class.
+
+ Token: IDENTIFIER: prueba.
+
+ Token: RESERVED WORD: extends.
+
+ Token: IDENTIFIER: public.
+
+ Token: RESERVED WORD: implements.
+
+ Token: IDENTIFIER: gd22.
+
+ Token: {.
+
+ Token: RESERVED WORD: string.
+
+ Token: IDENTIFIER: gdf.
+
+ Token: ;.
+
+ Token: RESERVED WORD: void.
+
+ Token: IDENTIFIER: ojalaFuncione.
+
+ Token: (.
+
+ Token: ).
+
+ Token: {.
+
+ Token: }.
+
+ Token: RESERVED WORD: bool.
+
+ Token: IDENTIFIER: ola.
+
+ Token: ;.
+
+ Token: RESERVED WORD: int.
+
+ Token: [].
+
+ Token: IDENTIFIER: hola.
+
+ Token: ;.
+
+ Token: }.
+
+ Token: RESERVED WORD: interface.
+
+ Token: IDENTIFIER: gg.
+
+ Token: {.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: hola.
+
+ Token: (.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: RESERVED WORD: void.
+
+ Token: IDENTIFIER: dfjdfk.
+
+ Token: (.
+
+ Token: RESERVED WORD: string.
+
+ Token: IDENTIFIER: ff.
+
+ Token: ,.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: hola.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: }.
+
+ Token: RESERVED WORD: class.
+
+ Token: IDENTIFIER: prueba.
+
+ Token: RESERVED WORD: extends.
+
+ Token: IDENTIFIER: public.
+
+ Token: RESERVED WORD: implements.
+
+ Token: IDENTIFIER: gd22.
+
+ Token: {.
+
+ Token: RESERVED WORD: string.
+
+ Token: IDENTIFIER: hola.
+
+ Token: (.
+
+ Token: ).
+
+ Token: {.
+
+ Token: RESERVED WORD: for.
+
+ Token: (.
+
+ Token: IDENTIFIER: i.
+
+ Token: =.
+
+ Token: 0.
+
+ Token: ;.
+
+ Token: IDENTIFIER: i.
+
+ Token: <.
+
+ Token: 5.
+
+ Token: ;.
+
+ Token: IDENTIFIER: i.
+
+ Token: +.
+
+ Token: 1.
+
+ Token: ).
+
+ Token: {.
+
+ Token: RESERVED WORD: Malloc.
+
+ Token: (.
+
+ Token: IDENTIFIER: hola.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: RESERVED WORD: return.
+
+ Token: (.
+
+ Token: RESERVED WORD: null.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: }.
+
+ Token: }.
+
+ Token: }.
+EOF

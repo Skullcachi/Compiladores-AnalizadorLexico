@@ -1,5 +1,5 @@
 int c;
-int a = b;
+
 int f1(int d, int e){
     int a;
     bool b;
@@ -12,5 +12,3 @@ int f1(int d, int e){
     return a;
 	
 } // No syntax errors should be found!!!
-
-int c = d;

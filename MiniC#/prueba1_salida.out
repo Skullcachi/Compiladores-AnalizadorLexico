@@ -1,33 +1,23 @@
 
- Token: int.
+ Token: RESERVED WORD: int.
 
  Token: IDENTIFIER: c.
 
  Token: ;.
 
- Token: int.
-
- Token: IDENTIFIER: a.
-
- Token: =.
-
- Token: IDENTIFIER: b.
-
- Token: ;.
-
- Token: int.
+ Token: RESERVED WORD: int.
 
  Token: IDENTIFIER: f1.
 
  Token: (.
 
- Token: int.
+ Token: RESERVED WORD: int.
 
  Token: IDENTIFIER: d.
 
  Token: ,.
 
- Token: int.
+ Token: RESERVED WORD: int.
 
  Token: IDENTIFIER: e.
 
@@ -35,13 +25,13 @@
 
  Token: {.
 
- Token: int.
+ Token: RESERVED WORD: int.
 
  Token: IDENTIFIER: a.
 
  Token: ;.
 
- Token: bool.
+ Token: RESERVED WORD: bool.
 
  Token: IDENTIFIER: b.
 
@@ -59,7 +49,7 @@
 
  Token: ;.
 
- Token: if.
+ Token: RESERVED WORD: if.
 
  Token: (.
 
@@ -85,7 +75,7 @@
 
  Token: }.
 
- Token: else.
+ Token: RESERVED WORD: else.
 
  Token: IDENTIFIER: a.
 
@@ -95,21 +85,11 @@
 
  Token: ;.
 
- Token: return.
+ Token: RESERVED WORD: return.
 
  Token: IDENTIFIER: a.
 
  Token: ;.
 
  Token: }.
-
- Token: int.
-
- Token: IDENTIFIER: c.
-
- Token: =.
-
- Token: IDENTIFIER: d.
-
- Token: ;.
 EOF
