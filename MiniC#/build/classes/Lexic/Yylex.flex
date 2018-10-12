@@ -76,7 +76,7 @@ L = [a-zA-Z_]
 "}"                                                                  { return symbol(sym.LLAVE_DER, new String(yytext()));}
 "[]"                                                                 { return symbol(sym.CORCHETES, new String(yytext()));}
 /*"()"                                                                 { return symbol(sym.PARENTESIS, new String(yytext()));}*/
-"{}"                                                                 { return symbol(sym.LLAVES, new String(yytext()));}
+/*"{}"                                                                 { return symbol(sym.LLAVES, new String(yytext()));}*/
 
 // STRINGs
 \"[^\r\n]+\"                                                         { 
