@@ -1,0 +1,679 @@
+
+ Token: RESERVED WORD: class.
+
+ Token: IDENTIFIER: Aniquilador.
+
+ Token: RESERVED WORD: extends.
+
+ Token: IDENTIFIER: ChuckNorris.
+
+ Token: RESERVED WORD: implements.
+
+ Token: IDENTIFIER: ElChacal.
+
+ Token: ,.
+
+ Token: IDENTIFIER: MariLaMariquita.
+
+ Token: ,.
+
+ Token: IDENTIFIER: Harry.
+
+ Token: {.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: InsultoNorris.
+
+ Token: (.
+
+ Token: ).
+
+ Token: {.
+
+ Token: IDENTIFIER: a.
+
+ Token: =.
+
+ Token: 3.
+
+ Token: +.
+
+ Token: 3.
+
+ Token: -.
+
+ Token: 3.
+
+ Token: -.
+
+ Token: 3.
+
+ Token: *.
+
+ Token: 3.
+
+ Token: *.
+
+ Token: 3.
+
+ Token: +.
+
+ Token: (.
+
+ Token: 3.
+
+ Token: *.
+
+ Token: 3.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: IDENTIFIER: a.
+
+ Token: =.
+
+ Token: 3.
+
+ Token: -.
+
+ Token: 3.
+
+ Token: ;.
+
+ Token: IDENTIFIER: a.
+
+ Token: =.
+
+ Token: 3.
+
+ Token: *.
+
+ Token: 3.
+
+ Token: ;.
+
+ Token: IDENTIFIER: a.
+
+ Token: =.
+
+ Token: 3.
+
+ Token: /.
+
+ Token: 3.
+
+ Token: ;.
+
+ Token: }.
+
+ Token: RESERVED WORD: void.
+
+ Token: IDENTIFIER: PatadaNorris.
+
+ Token: (.
+
+ Token: ).
+
+ Token: {.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: a.
+
+ Token: ;.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: b.
+
+ Token: ;.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: c.
+
+ Token: ;.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: res.
+
+ Token: ;.
+
+ Token: RESERVED WORD: string.
+
+ Token: IDENTIFIER: hola.
+
+ Token: ;.
+
+ Token: IDENTIFIER: a.
+
+ Token: =.
+
+ Token: 0.
+
+ Token: ;.
+
+ Token: IDENTIFIER: b.
+
+ Token: =.
+
+ Token: 1.
+
+ Token: ;.
+
+ Token: IDENTIFIER: c.
+
+ Token: =.
+
+ Token: 2.
+
+ Token: ;.
+
+ Token: RESERVED WORD: if.
+
+ Token: (.
+
+ Token: IDENTIFIER: a.
+
+ Token: >.
+
+ Token: IDENTIFIER: b.
+
+ Token: ).
+
+ Token: RESERVED WORD: if.
+
+ Token: (.
+
+ Token: IDENTIFIER: a.
+
+ Token: >.
+
+ Token: IDENTIFIER: b.
+
+ Token: ).
+
+ Token: RESERVED WORD: if.
+
+ Token: (.
+
+ Token: IDENTIFIER: a.
+
+ Token: >.
+
+ Token: IDENTIFIER: b.
+
+ Token: ).
+
+ Token: IDENTIFIER: res.
+
+ Token: =.
+
+ Token: 0.
+
+ Token: ;.
+
+ Token: RESERVED WORD: else.
+
+ Token: RESERVED WORD: while.
+
+ Token: (.
+
+ Token: IDENTIFIER: a.
+
+ Token: >.
+
+ Token: IDENTIFIER: b.
+
+ Token: ).
+
+ Token: RESERVED WORD: if.
+
+ Token: (.
+
+ Token: IDENTIFIER: a.
+
+ Token: >.
+
+ Token: IDENTIFIER: b.
+
+ Token: ).
+
+ Token: IDENTIFIER: res.
+
+ Token: =.
+
+ Token: 1.
+
+ Token: ;.
+
+ Token: RESERVED WORD: else.
+
+ Token: IDENTIFIER: res.
+
+ Token: =.
+
+ Token: 0.
+
+ Token: ;.
+
+ Token: RESERVED WORD: else.
+
+ Token: IDENTIFIER: res.
+
+ Token: =.
+
+ Token: 1.
+
+ Token: ;.
+
+ Token: RESERVED WORD: else.
+
+ Token: RESERVED WORD: if.
+
+ Token: (.
+
+ Token: IDENTIFIER: a.
+
+ Token: >.
+
+ Token: IDENTIFIER: b.
+
+ Token: ).
+
+ Token: RESERVED WORD: if.
+
+ Token: (.
+
+ Token: IDENTIFIER: a.
+
+ Token: >.
+
+ Token: IDENTIFIER: b.
+
+ Token: ).
+
+ Token: IDENTIFIER: res.
+
+ Token: =.
+
+ Token: 0.
+
+ Token: ;.
+
+ Token: RESERVED WORD: else.
+
+ Token: IDENTIFIER: res.
+
+ Token: =.
+
+ Token: 1.
+
+ Token: ;.
+
+ Token: RESERVED WORD: else.
+
+ Token: RESERVED WORD: while.
+
+ Token: (.
+
+ Token: IDENTIFIER: a.
+
+ Token: >.
+
+ Token: IDENTIFIER: b.
+
+ Token: ).
+
+ Token: RESERVED WORD: if.
+
+ Token: (.
+
+ Token: IDENTIFIER: a.
+
+ Token: >.
+
+ Token: IDENTIFIER: b.
+
+ Token: ).
+
+ Token: IDENTIFIER: res.
+
+ Token: =.
+
+ Token: 1.
+
+ Token: ;.
+
+ Token: RESERVED WORD: else.
+
+ Token: IDENTIFIER: res.
+
+ Token: =.
+
+ Token: 0.
+
+ Token: ;.
+
+ Token: RESERVED WORD: for.
+
+ Token: (.
+
+ Token: ;.
+
+ Token: IDENTIFIER: a.
+
+ Token: >.
+
+ Token: IDENTIFIER: c.
+
+ Token: ;.
+
+ Token: ).
+
+ Token: RESERVED WORD: for.
+
+ Token: (.
+
+ Token: !.
+
+ Token: IDENTIFIER: a.
+
+ Token: ;.
+
+ Token: IDENTIFIER: a.
+
+ Token: >.
+
+ Token: IDENTIFIER: c.
+
+ Token: ;.
+
+ Token: -.
+
+ Token: IDENTIFIER: b.
+
+ Token: ).
+
+ Token: RESERVED WORD: for.
+
+ Token: (.
+
+ Token: IDENTIFIER: a.
+
+ Token: >=.
+
+ Token: IDENTIFIER: b.
+
+ Token: ;.
+
+ Token: IDENTIFIER: a.
+
+ Token: >.
+
+ Token: IDENTIFIER: c.
+
+ Token: ;.
+
+ Token: IDENTIFIER: c.
+
+ Token: <=.
+
+ Token: IDENTIFIER: d.
+
+ Token: ).
+
+ Token: RESERVED WORD: if.
+
+ Token: (.
+
+ Token: IDENTIFIER: a.
+
+ Token: >.
+
+ Token: IDENTIFIER: b.
+
+ Token: ).
+
+ Token: IDENTIFIER: b.
+
+ Token: =.
+
+ Token: -.
+
+ Token: IDENTIFIER: b.
+
+ Token: -.
+
+ Token: IDENTIFIER: b.
+
+ Token: -.
+
+ Token: IDENTIFIER: b.
+
+ Token: +.
+
+ Token: 10.
+
+ Token: -.
+
+ Token: (.
+
+ Token: -.
+
+ Token: IDENTIFIER: b.
+
+ Token: -.
+
+ Token: IDENTIFIER: a.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: RESERVED WORD: else.
+
+ Token: IDENTIFIER: c.
+
+ Token: =.
+
+ Token: 0.
+
+ Token: ;.
+
+ Token: RESERVED WORD: while.
+
+ Token: (.
+
+ Token: IDENTIFIER: a.
+
+ Token: >.
+
+ Token: IDENTIFIER: b.
+
+ Token: ).
+
+ Token: RESERVED WORD: if.
+
+ Token: (.
+
+ Token: IDENTIFIER: a.
+
+ Token: >.
+
+ Token: IDENTIFIER: b.
+
+ Token: ).
+
+ Token: RESERVED WORD: for.
+
+ Token: (.
+
+ Token: ;.
+
+ Token: IDENTIFIER: a.
+
+ Token: <=.
+
+ Token: IDENTIFIER: c.
+
+ Token: ;.
+
+ Token: ).
+
+ Token: RESERVED WORD: Print.
+
+ Token: (.
+
+ Token: -.
+
+ Token: IDENTIFIER: b.
+
+ Token: ,.
+
+ Token: -.
+
+ Token: IDENTIFIER: b.
+
+ Token: ,.
+
+ Token: -.
+
+ Token: IDENTIFIER: b.
+
+ Token: ,.
+
+ Token: -.
+
+ Token: IDENTIFIER: b.
+
+ Token: ,.
+
+ Token: IDENTIFIER: a.
+
+ Token: +.
+
+ Token: IDENTIFIER: b.
+
+ Token: ,.
+
+ Token: IDENTIFIER: e.
+
+ Token: -.
+
+ Token: IDENTIFIER: c.
+
+ Token: ,.
+
+ Token: !.
+
+ Token: IDENTIFIER: b.
+
+ Token: ,.
+
+ Token: IDENTIFIER: e.
+
+ Token: !=.
+
+ Token: IDENTIFIER: a.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: }.
+
+ Token: }.
+
+ Token: RESERVED WORD: interface.
+
+ Token: IDENTIFIER: NorrisInterface.
+
+ Token: {.
+
+ Token: RESERVED WORD: void.
+
+ Token: IDENTIFIER: CabezaNorris.
+
+ Token: (.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: cuarzo.
+
+ Token: ,.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: oro.
+
+ Token: ,.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: piedra.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: RESERVED WORD: void.
+
+ Token: IDENTIFIER: BrazoDerechoNorris.
+
+ Token: (.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: metal.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: RESERVED WORD: void.
+
+ Token: IDENTIFIER: BrazoIzquierdoNorris.
+
+ Token: (.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: vibranio.
+
+ Token: ,.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: oro.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: RESERVED WORD: void.
+
+ Token: IDENTIFIER: PieDerechoNorris.
+
+ Token: (.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: RESERVED WORD: void.
+
+ Token: IDENTIFIER: PieIzquierdoNorris.
+
+ Token: (.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: }.
+EOF

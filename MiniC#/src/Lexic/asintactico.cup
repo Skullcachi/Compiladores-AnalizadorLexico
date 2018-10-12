@@ -9,7 +9,7 @@ parser code {:
         StringBuilder m = new StringBuilder("Error");
         if (info instanceof java_cup.runtime.Symbol){
             java_cup.runtime.Symbol s = ((java_cup.runtime.Symbol) info);
-            m.append("Sintactico: simbolo: " + s.value.toString()+ " no reconocido.");
+            m.append(" de sintaxis... Simbolo: " + s.value.toString()+ " no reconocido.");
             if (s.left >= 0) {
                 m.append(" in line " + (s.left + 1));
                 if (s.right >= 0)

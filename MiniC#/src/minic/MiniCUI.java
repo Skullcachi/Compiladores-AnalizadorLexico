@@ -217,7 +217,7 @@ public class MiniCUI extends javax.swing.JFrame {
                 }
                 catch(Exception ex)
                 {
-                    JOptionPane.showMessageDialog(this,ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this,ex.getMessage(),"Error ",JOptionPane.ERROR_MESSAGE);
                 }
                 return;
             }
