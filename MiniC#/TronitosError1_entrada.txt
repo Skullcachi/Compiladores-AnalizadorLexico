@@ -1,0 +1,23 @@
+interface Parser {
+	int f1(int x, double y, string z);
+	void proc1(double y); { // Here's a syntactical error!
+	}
+}
+
+void main(){
+	int m1;
+	int m2;
+	Parser MyParser;
+	m1=MyParser.f1(1,2.2,"3");
+	while (m1 >= 20) {
+		for (m2=f1(1,2.2,"3");m2=m2+1;(2)) 
+			
+		}
+	Print(this.m2 + 10);
+	if (m2 != m1 && true)
+		{
+		  string p1;
+		     p1 = "This is a string";		
+		}
+	else 	Malloc(25);
+}

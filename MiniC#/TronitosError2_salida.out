@@ -1,0 +1,363 @@
+
+ Token: RESERVED WORD: string.
+
+ Token: IDENTIFIER: My_String.
+
+ Token: ;.
+
+ Token: RESERVED WORD: class.
+
+ Token: IDENTIFIER: Parser.
+
+ Token: RESERVED WORD: implements.
+
+ Token: IDENTIFIER: lexical.
+
+ Token: ,.
+
+ Token: IDENTIFIER: syntactical.
+
+ Token: {.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: a1.
+
+ Token: ;.
+
+ Token: IDENTIFIER: My_String.
+
+ Token: =.
+
+ Token: "This is a string".
+
+ Token: ;.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: f1.
+
+ Token: (.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: a.
+
+ Token: ,.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: b.
+
+ Token: ,.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: c.
+
+ Token: ).
+
+ Token: {.
+
+ Token: {.
+
+ Token: RESERVED WORD: if.
+
+ Token: (.
+
+ Token: IDENTIFIER: a.
+
+ Token: >.
+
+ Token: IDENTIFIER: b.
+
+ Token: ).
+
+ Token: IDENTIFIER: p1.
+
+ Token: =.
+
+ Token: 2.
+
+ Token: ;.
+
+ Token: RESERVED WORD: else.
+
+ Token: IDENTIFIER: p1.
+
+ Token: =.
+
+ Token: 3.
+
+ Token: ;.
+
+ Token: }.
+
+ Token: RESERVED WORD: return.
+
+ Token: (.
+
+ Token: IDENTIFIER: p1.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: }.
+
+ Token: RESERVED WORD: void.
+
+ Token: IDENTIFIER: proc1.
+
+ Token: (.
+
+ Token: RESERVED WORD: double.
+
+ Token: IDENTIFIER: y.
+
+ Token: ).
+
+ Token: {.
+
+ Token: RESERVED WORD: while.
+
+ Token: (.
+
+ Token: IDENTIFIER: a1.
+
+ Token: <=.
+
+ Token: IDENTIFIER: y.
+
+ Token: ).
+
+ Token: {.
+
+ Token: IDENTIFIER: a1.
+
+ Token: =.
+
+ Token: IDENTIFIER: a1.
+
+ Token: *.
+
+ Token: DOUBLE: 00.0001.
+
+ Token: ;.
+
+ Token: RESERVED WORD: if.
+
+ Token: (.
+
+ Token: IDENTIFIER: a1.
+
+ Token: ==.
+
+ Token: 0.
+
+ Token: ).
+
+ Token: RESERVED WORD: break.
+
+ Token: ;.
+
+ Token: }.
+
+ Token: }.
+
+ Token: }.
+
+ Token: RESERVED WORD: void.
+
+ Token: IDENTIFIER: main.
+
+ Token: (.
+
+ Token: ).
+
+ Token: {.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: m1.
+
+ Token: ;.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: m2.
+
+ Token: ;.
+
+ Token: RESERVED WORD: double.
+
+ Token: IDENTIFIER: m3.
+
+ Token: ;.
+
+ Token: IDENTIFIER: Parser.
+
+ Token: IDENTIFIER: MyParser.
+
+ Token: ;.
+
+ Token: IDENTIFIER: MyParser.
+
+ Token: ..
+
+ Token: IDENTIFIER: proc1.
+
+ Token: (.
+
+ Token: IDENTIFIER: m3.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: RESERVED WORD: while.
+
+ Token: (.
+
+ Token: IDENTIFIER: m1.
+
+ Token: >=.
+
+ Token: 20.
+
+ Token: ).
+
+ Token: {.
+
+ Token: RESERVED WORD: for.
+
+ Token: (.
+
+ Token: IDENTIFIER: m2.
+
+ Token: =.
+
+ Token: IDENTIFIER: MyParser.
+
+ Token: ..
+
+ Token: IDENTIFIER: f1.
+
+ Token: (.
+
+ Token: 1.
+
+ Token: ,.
+
+ Token: DOUBLE: 2.2.
+
+ Token: ,.
+
+ Token: "3".
+
+ Token: ).
+
+ Token: ;.
+
+ Token: IDENTIFIER: m2.
+
+ Token: =.
+
+ Token: IDENTIFIER: m2.
+
+ Token: +.
+
+ Token: 1.
+
+ Token: ;.
+
+ Token: (.
+
+ Token: 2.
+
+ Token: ).
+
+ Token: ).
+
+ Token: ;.
+
+ Token: IDENTIFIER: m1.
+
+ Token: =.
+
+ Token: IDENTIFIER: m1.
+
+ Token: +.
+
+ Token: 2.
+
+ Token: ;.
+
+ Token: }.
+
+ Token: RESERVED WORD: Print.
+
+ Token: (.
+
+ Token: RESERVED WORD: this.
+
+ Token: ..
+
+ Token: IDENTIFIER: m2.
+
+ Token: +.
+
+ Token: 10.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: RESERVED WORD: if.
+
+ Token: (.
+
+ Token: IDENTIFIER: m2.
+
+ Token: %.
+
+ Token: IDENTIFIER: m1.
+
+ Token: ==.
+
+ Token: 2.
+
+ Token: ).
+
+ Token: RESERVED WORD: Print.
+
+ Token: (.
+
+ Token: "Sucess!".
+
+ Token: ,.
+
+ Token: IDENTIFIER: m1.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: RESERVED WORD: else.
+
+ Token: {.
+
+ Token: RESERVED WORD: Print.
+
+ Token: (.
+
+ Token: "Error!".
+
+ Token: ).
+
+ Token: ;.
+
+ Token: }.
+
+ Token: }.
+EOF
