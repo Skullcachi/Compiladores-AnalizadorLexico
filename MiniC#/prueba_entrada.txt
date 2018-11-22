@@ -1,3 +1,24 @@
-void main(){
-    a = b;
+class Parser
+{
+    int a1;
+
+    int f1(int a, int b, int c) {
+        //empty proc
+        a1= 5;
+    	int a8;
+    	int a2;
+    	string a3;
+    	int a4;
+    	f1("hola",5,a4);
+    	return (8);
+    }
+
+    int proc1(string y)
+    {
+        proc("hola");
+        // empty void
+    }
 }
+
+
+

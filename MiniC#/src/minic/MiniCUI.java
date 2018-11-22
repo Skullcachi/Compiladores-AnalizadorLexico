@@ -11,6 +11,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Reader;
@@ -214,6 +215,30 @@ public class MiniCUI extends javax.swing.JFrame {
                 {
                     String[] testFile = { filetoread.getName()};
                     asintactico.main(testFile);
+                    String value = "";
+                    FileWriter ef = new FileWriter("C:/Users/cachi/Documents/Landivar/Compiladores/Compiladores-AnalizadorLexico/Tabla_de_simbolos.txt");
+                    BufferedWriter e = new BufferedWriter(ef);
+                    e.write("IDENTIFICADOR                 TIPO                DESCRIPCION         VALOR               AMBITO");
+                    e.newLine();
+                    for (int i = 0; i < Lexic.SymbolTable.output.size(); i++) 
+                    {
+                       Lexic.Salida aux = Lexic.SymbolTable.output.get(i);
+                       String type = aux.simbolo.type;
+                       String desc = aux.simbolo.elementType;
+                       if(aux.simbolo.value != null)
+                       {
+                            value = aux.simbolo.value.toString();
+                       }
+                       else
+                       {
+                           value = "??";
+                       }
+                       String current = aux.simbolo.ambito;
+                       e.write(aux.nombre + OutputFormat(aux.nombre,30,0) + type + OutputFormat(type, 50,30)+ desc + OutputFormat(desc, 70,50)+ value + OutputFormat(value, 90,70)+ current);
+                       e.newLine();
+                    }
+                    e.close();
+                    ef.close();
                 }
                 catch(Exception ex)
                 {
@@ -246,6 +271,18 @@ public class MiniCUI extends javax.swing.JFrame {
                 }
             }
         }        
+    }
+    
+    public  String OutputFormat(String size, int separador, int columnas)
+    {
+                String nuevoEspacio = "";
+                int t = size.length();
+                int ciclos = separador - (t+columnas);
+                for (int i = 0; i < ciclos; i++) 
+                {
+                    nuevoEspacio+=" ";
+                }
+                return nuevoEspacio;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

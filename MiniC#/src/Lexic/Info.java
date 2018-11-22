@@ -7,13 +7,24 @@ package Lexic;
 
 public class Info {
     
-    String type;
-    Object value;
+    public String type;
+    public String elementType;
+    public String vars = "";
+    public String ambito = "";
+    public Object value;
     
-    public  Info(String tipo, Object val)
+    public  Info(String tipo,String tipoDato, Object val)
     {
         type = tipo;
-        value = val;        
+        value = val;
+        elementType = tipoDato;
+    }
+    
+    public Info()
+    {
+        this.value = "??";
+        this.type = "??";
+        this.elementType = "??";        
     }
     
    public String getType()

@@ -1,21 +1,129 @@
 
- Token: void.
+ Token: RESERVED WORD: class.
 
- Token: IDENTIFIER: main.
+ Token: IDENTIFIER: Parser.
+
+ Token: {.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: a1.
+
+ Token: ;.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: f1.
 
  Token: (.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: a.
+
+ Token: ,.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: b.
+
+ Token: ,.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: c.
 
  Token: ).
 
  Token: {.
 
- Token: IDENTIFIER: a.
+ Token: IDENTIFIER: a1.
 
  Token: =.
 
- Token: IDENTIFIER: b.
+ Token: 5.
 
  Token: ;.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: a8.
+
+ Token: ;.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: a2.
+
+ Token: ;.
+
+ Token: RESERVED WORD: string.
+
+ Token: IDENTIFIER: a3.
+
+ Token: ;.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: a4.
+
+ Token: ;.
+
+ Token: IDENTIFIER: f1.
+
+ Token: (.
+
+ Token: "hola".
+
+ Token: ,.
+
+ Token: 5.
+
+ Token: ,.
+
+ Token: IDENTIFIER: a4.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: RESERVED WORD: return.
+
+ Token: (.
+
+ Token: 8.
+
+ Token: ).
+
+ Token: ;.
+
+ Token: }.
+
+ Token: RESERVED WORD: int.
+
+ Token: IDENTIFIER: proc1.
+
+ Token: (.
+
+ Token: RESERVED WORD: string.
+
+ Token: IDENTIFIER: y.
+
+ Token: ).
+
+ Token: {.
+
+ Token: IDENTIFIER: proc.
+
+ Token: (.
+
+ Token: "hola".
+
+ Token: ).
+
+ Token: ;.
+
+ Token: }.
 
  Token: }.
 EOF

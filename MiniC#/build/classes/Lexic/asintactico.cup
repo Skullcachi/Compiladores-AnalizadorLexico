@@ -55,17 +55,19 @@ parser code {:
 terminal        SUMA, RESTA, MULT, DIV, MOD, MENOR, MENOR_IGUAL, MAYOR, MAYOR_IGUAL, ASIGNAR, IGUAL, DIFERENTE, AND, OR, NOT, SEMI_COLON, COMA, PUNTO, COR_IZQ, COR_DER, PAR_IZQ, PAR_DER, LLAVE_IZQ, LLAVE_DER, CORCHETES;
 terminal        VOID, INT, DOUBLE, HEXADECIMAL, BOOL, STRING, CLASS, INTERFACE, NULL, THIS, EXTENDS, IMPLEMENTS, FOR, WHILE, IF, ELSE, RETURN, BREAK, NEW, NEWARRAY, PRINT, READINTEGER, READLINE, MALLOC;
 terminal        TRUE, FALSE;
-terminal        INTEGER, IDENT, GETBYTE, SETBYTE, INTCONSTANT, DOUBLECONSTANT, BOOLCONSTANT, STRINGCONSTANT;
+terminal        INTEGER, IDENT, GETBYTE, SETBYTE, INTCONSTANT, DOUBLECONSTANT, BOOLCONSTANT, STRINGCONSTANT, OBJECT, CONSTANT;
 
-non terminal    Program, Decl, VariableDecl, Variable, Type, FunctionDecl, Formals, ClassDecl, Field, InterfaceDecl, Prototype, StmtBlock, Stmt, IfStmt, WhileStmt, ForStmt, ReturnStmt, BreakStmt, PrintStmt, Expr, LValue, Call, LibCall, Actuals, Constant;
+non terminal    Program, Decl, VariableDecl, Variable, Type, FunctionDecl, Formals, ClassDecl, Field, InterfaceDecl, Prototype, StmtBlock, Stmt, IfStmt, WhileStmt, ForStmt, ReturnStmt, BreakStmt, PrintStmt, Expr, Expr1, LValue, Call, LibCall, Actuals, Constant;
 non terminal    FunctionDeclPrima, Extends, Implements, ImplementsClass, ClassField, InterfacePrototype, PrototypePrima, StmtBlockVariableDecl, StmtContent, StmtExpr, IfStmtElseStmt, PrintStmtExpr, CallActuals, FormalsPrima;
 
 /* Precedencias */
+precedence left ASIGNAR;
 precedence left SUMA, RESTA, MULT, DIV, MOD;
-precedence left MENOR, MENOR_IGUAL, MAYOR, MAYOR_IGUAL, ASIGNAR, IGUAL, DIFERENTE, AND, OR, NOT;
+precedence left MENOR, MENOR_IGUAL, MAYOR, MAYOR_IGUAL, IGUAL, DIFERENTE, AND, OR, NOT;
 precedence left ELSE;
 /*precedence left PAR_DER;*/
-/*precedence left IDENT;*/
+precedence left IDENT;
+/*precedence left SEMI_COLON;*/
 
 /* Declaracion de la gramatica */
 Program ::= Program Decl
@@ -80,48 +82,121 @@ Decl    ::= VariableDecl
         |   error LLAVE_DER
         ;
 
-VariableDecl ::=    Variable SEMI_COLON 
+VariableDecl ::=    Variable SEMI_COLON
+        | CONSTANT Variable SEMI_COLON
         ;
 
-Variable ::=    Type IDENT
+Variable ::=    Type:t IDENT:I {:
+                                RESULT = ""; 
+                                RESULT=RESULT.toString().concat("["+I+","+t+"]");
+                                if (!SymbolTable.put(I,"v",t)){
+                                    System.out.println("  La variable " + I + " ya ha sido declarada en el ámbito actual");
+                                } 
+                            :}
         ;
 
-Type ::=    INT
-    |       DOUBLE
-    |       BOOL
-    |       STRING
-    |       IDENT
+Type ::=    INT             {: RESULT = "integer"; :}
+    |       DOUBLE          {: RESULT = "double"; :}
+    |       BOOL            {: RESULT = "bool"; :}
+    |       STRING          {: RESULT = "string"; :}
+    |       IDENT:n1           {: RESULT = n1.toString(); :}
+    |       VOID
     |       Type CORCHETES
     ;
 
-FunctionDecl ::=    Type FunctionDeclPrima
-            |       VOID FunctionDeclPrima
-            ;
+FunctionDecl ::= FunctionDeclPrima:n;
 
-FunctionDeclPrima ::=   IDENT PAR_IZQ Formals PAR_DER StmtBlock
-                    ;
 
-Formals ::= FormalsPrima Variable
+FunctionDeclPrima ::= Type:t IDENT:n 
+    {: 
+        if(!SymbolTable.put(n.toString(),"m",t)) 
+        {
+            System.out.println("Nombre de método ya existe");
+        } else 
+        {
+            System.out.print(" METHOD ENTRY: "+n);
+            SymbolTable.push();
+        }
+    :} 
+    PAR_IZQ Formals:p 
+    {:
+        SymbolTable.parametros(n.toString(),p);
+    :} 
+    PAR_DER StmtBlock:v 
+    {:
+        SymbolTable.mreturn(t.toString(),v);
+        System.out.print(" BLOCK EXIT");
+        SymbolTable.pop();
+        System.out.print(" METHOD EXIT " +n);
+        SymbolTable.pop();
+    :} 
+    ;
+
+Formals ::= FormalsPrima:a Variable:b 
+            {: 
+                if(a==null){
+                    a="";
+                    a = a.toString().concat(b.toString());
+                }else{
+                    a = a.toString().concat(b.toString());
+                } 
+                RESULT = a; 
+            :}
         |   /* EPSILON */
         ;
 
-FormalsPrima ::= FormalsPrima Variable COMA
+FormalsPrima ::= FormalsPrima:a Variable:b COMA {:
+                                                    if(a==null){
+                                                        a="";
+                                                    } 
+                                                    a = a.toString().concat(b+"-");
+                                                    RESULT = a;
+                                                :}
             |   /*EPSILON*/
             ;
 
-ClassDecl   ::= CLASS IDENT Extends Implements LLAVE_IZQ ClassField LLAVE_DER
-        ;
+ClassDecl   ::= CLASS IDENT:n1 Extends:n2 
+            {:
+                if(n2 == null)
+                {
+                    if(SymbolTable.putClass(n1.toString(),null,null) != 0)
+                    {
+                        System.out.println("  La clase " + n1 + " ya ha sido declarada en el ambito actual");
+                    }
+                }
+                else
+                {
+                    switch(SymbolTable.putClass(n1.toString(),n2.toString(),null))
+                    {
+                        case 1:
+                        System.out.println("  La clase " + n1 + " ya ha sido declarada en el ambito actual");
+                        break;
 
-Extends ::= EXTENDS IDENT
+                        case 2:
+                        System.out.println("  La clase " + n2 + " no existe en el ambito actual");
+                        break;                
+                    } 
+                }
+            :}
+            Implements LLAVE_IZQ ClassField LLAVE_DER
+            {:
+              SymbolTable.pop();
+            :} 
+;
+
+Extends ::= EXTENDS IDENT:n1 {: RESULT = n1; :}
         |   /* EPSILON */
         ;
 
-Implements  ::= IMPLEMENTS ImplementsClass
+Implements  ::= IMPLEMENTS ImplementsClass:e 
+                {: 
+                    SymbolTable.getInterfaces(e.toString());
+                :}
             | /* EPSILON */
             ;
 
-ImplementsClass ::= ImplementsClass COMA IDENT
-                |   IDENT
+ImplementsClass ::= ImplementsClass:e1 COMA IDENT:e2 {: RESULT = e1 + "," + e2; :}
+                |   IDENT:n3 {: RESULT = n3; :}
                 ;
 
 ClassField  ::= ClassField Field
@@ -132,7 +207,7 @@ Field   ::= VariableDecl
         | FunctionDecl
         ;
 
-InterfaceDecl   ::= INTERFACE IDENT LLAVE_IZQ InterfacePrototype LLAVE_DER
+InterfaceDecl   ::= INTERFACE IDENT:n1 {: if(SymbolTable.putClass(n1.toString(), null, null) != 0) System.out.println("La interfaz ya está declarada en el ámbito actual"); :} LLAVE_IZQ InterfacePrototype LLAVE_DER
                 ;
 
 InterfacePrototype  ::= InterfacePrototype Prototype
@@ -146,30 +221,40 @@ Prototype   ::= Type PrototypePrima
 PrototypePrima  ::= IDENT PAR_IZQ Formals PAR_DER SEMI_COLON
                 ;
 
-StmtBlock   ::= LLAVE_IZQ StmtContent LLAVE_DER
+StmtBlock   ::= LLAVE_IZQ {: System.out.print(" BLOCK ENTRY"); SymbolTable.push(); :} StmtContent:p {: RESULT = p; :} LLAVE_DER
             ;
 
-StmtContent ::= StmtBlockVariableDecl StmtContent
+StmtContent ::= StmtBlockVariableDecl:p StmtContent:q {:
+                                                        if(p!=null){
+                                                            if(q==null){
+                                                                q = "";
+                                                                q = q.toString().concat(p.toString());
+                                                            }else {
+                                                                q = q.toString().concat(p.toString());
+                                                            }
+                                                        } 
+                                                        RESULT = q; 
+                                                      :}
             |   /* EPSILON */
             ;
 
 StmtBlockVariableDecl   ::=  VariableDecl
-                        |   Stmt
+                        |   Stmt:p {: RESULT = p; :} 
                         ;
 
 
 
-Stmt    ::= StmtExpr SEMI_COLON
+Stmt    ::= StmtExpr:m {: RESULT=m; :} SEMI_COLON
         |   IfStmt
         |   WhileStmt
         |   ForStmt
         |   BreakStmt
-        |   ReturnStmt
+        |   ReturnStmt:p {:RESULT = p; :}
         |   PrintStmt
         |   StmtBlock
         ;
 
-StmtExpr    ::= Expr
+StmtExpr    ::= Expr:n {: RESULT = n; :}
             |   /* EPSILON */   
             ;
 
@@ -186,7 +271,7 @@ WhileStmt   ::= WHILE PAR_IZQ Expr PAR_DER Stmt
 ForStmt ::= FOR PAR_IZQ StmtExpr SEMI_COLON Expr SEMI_COLON StmtExpr PAR_DER Stmt
         ;
 
-ReturnStmt  ::= RETURN StmtExpr SEMI_COLON
+ReturnStmt  ::= RETURN StmtExpr:p {: RESULT = p; :} SEMI_COLON
             ;
 
 BreakStmt ::=   BREAK SEMI_COLON
@@ -195,20 +280,26 @@ BreakStmt ::=   BREAK SEMI_COLON
 PrintStmt   ::= PRINT PAR_IZQ PrintStmtExpr PAR_DER SEMI_COLON
             ;
 
-PrintStmtExpr   ::= PrintStmtExpr COMA Expr
-                |   Expr
+PrintStmtExpr   ::= PrintStmtExpr:a COMA Expr:b {: 
+                                                    a = a.toString().concat(","+b.toString()); 
+                                                    RESULT = a;
+                                                :}
+                |   Expr:n {: RESULT = n.toString(); :}
                 ;
 
-Expr    ::= LValue ASIGNAR Expr
-        |   Constant
-        |   LValue
+Expr    ::= LValue:v ASIGNAR Expr:e
+    {:
+        SymbolTable.Validar(v.toString(), e.toString());
+    :}
+        |   Constant:e    {: RESULT = e; :}
+        |   LValue:e      {: RESULT = e; :}
         |   THIS
         |   Call
         |   PAR_IZQ Expr PAR_DER
-        |   Expr SUMA Expr
-        |   Expr RESTA Expr
-        |   Expr MULT Expr
-        |   Expr DIV Expr
+        |   Expr1:e1 SUMA Expr:e2   {: RESULT = e1 + "+" + e2; :}
+        |   Expr1:e1 RESTA Expr:e2  {: RESULT = e1 + "-" + e2; :}
+        |   Expr1:e1 MULT Expr:e2   {: RESULT = e1 + "*" + e2; :}
+        |   Expr1:e1 DIV Expr:e2    {: RESULT = e1 + "/" + e2; :}
         |   Expr MOD Expr
         |   RESTA Expr
         |   Expr MENOR Expr
@@ -227,12 +318,21 @@ Expr    ::= LValue ASIGNAR Expr
         |   MALLOC PAR_IZQ Expr PAR_DER
         ;
 
-LValue ::=  IDENT
+Expr1 ::= Constant:e {: RESULT = e; :}
+        |   IDENT:e {: RESULT = e; :}
+        ;
+
+LValue ::=  IDENT:e {: RESULT = e; :}
         |   Expr PUNTO IDENT
         |   Expr COR_IZQ Expr COR_DER
         ;
 
-Call    ::= IDENT PAR_IZQ Actuals PAR_DER
+Call    ::= IDENT:n {:
+                        if(!SymbolTable.get_name(n.toString(), "m")){
+                            System.out.println("***WARNING*** ==> Método: " + n + " no ha sido declarado");
+                        }
+                    :} 
+            PAR_IZQ Actuals:n1 {: SymbolTable.tipos(n.toString(),n1.toString()); :} PAR_DER
         |   Expr PUNTO IDENT CallActuals
         |   Expr PUNTO LibCall CallActuals
         ;
@@ -244,12 +344,12 @@ LibCall ::= GETBYTE PAR_IZQ Expr PAR_DER
         |   SETBYTE PAR_IZQ Expr COMA Expr PAR_DER
         ;
 
-Actuals  ::= PrintStmtExpr
+Actuals  ::= PrintStmtExpr:n {:System.out.println(n); RESULT = n; :}
          |   /* EPSILON */
          ;
-Constant ::= INTCONSTANT
-        |   DOUBLECONSTANT
-        |   BOOLCONSTANT
-        |   STRINGCONSTANT
-        |   NULL
+Constant ::= INTCONSTANT:e {: RESULT = e + "&integer"; :}
+        |   DOUBLECONSTANT:e {: RESULT = e + "&dob"; :}
+        |   BOOLCONSTANT:e {: RESULT = e + "&bool"; :}
+        |   STRINGCONSTANT:e {: RESULT = e + "&str"; :}
+        |   NULL {: RESULT = "&null"; :}
         ;

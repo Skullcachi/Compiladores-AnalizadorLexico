@@ -1,0 +1,13 @@
+IDENTIFICADOR                 TIPO                DESCRIPCION         VALOR               AMBITO
+IDENTIFIER: Parser            ??                  Clase               ??                  Main
+IDENTIFIER: a1                integer             v                   ??                  {IDENTIFIER: Parser=null}
+IDENTIFIER: f1                integer             m                   ??                  {IDENTIFIER: Parser=null}
+IDENTIFIER: a                 integer             v                   ??                  {IDENTIFIER: a1=Lexic.Info@4820525c, IDENTIFIER: f1=Lexic.Info@3f69b9d3}
+IDENTIFIER: b                 integer             v                   ??                  {IDENTIFIER: a1=Lexic.Info@4820525c, IDENTIFIER: f1=Lexic.Info@3f69b9d3}
+IDENTIFIER: c                 integer             v                   ??                  {IDENTIFIER: a1=Lexic.Info@4820525c, IDENTIFIER: f1=Lexic.Info@3f69b9d3}
+IDENTIFIER: a8                integer             v                   ??                  {IDENTIFIER: c=Lexic.Info@1cccd063, IDENTIFIER: a=Lexic.Info@6ce0833b, IDENTIFIER: b=Lexic.Info@5634da4b}
+IDENTIFIER: a2                integer             v                   ??                  {IDENTIFIER: c=Lexic.Info@1cccd063, IDENTIFIER: a=Lexic.Info@6ce0833b, IDENTIFIER: b=Lexic.Info@5634da4b}
+IDENTIFIER: a3                string              v                   ??                  {IDENTIFIER: c=Lexic.Info@1cccd063, IDENTIFIER: a=Lexic.Info@6ce0833b, IDENTIFIER: b=Lexic.Info@5634da4b}
+IDENTIFIER: a4                integer             v                   ??                  {IDENTIFIER: c=Lexic.Info@1cccd063, IDENTIFIER: a=Lexic.Info@6ce0833b, IDENTIFIER: b=Lexic.Info@5634da4b}
+IDENTIFIER: proc1             integer             m                   ??                  {IDENTIFIER: Parser=null}
+IDENTIFIER: y                 string              v                   ??                  {IDENTIFIER: a1=Lexic.Info@4820525c, IDENTIFIER: proc1=Lexic.Info@28be2253, IDENTIFIER: f1=Lexic.Info@3f69b9d3}
